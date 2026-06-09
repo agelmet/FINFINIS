@@ -95,9 +95,6 @@ nav.scrolled{
 .nav-brand{display:flex;align-items:center;gap:.85rem}
 .nav-brand img{height:54px;width:auto;transition:height .5s var(--ease)}
 nav.scrolled .nav-brand img{height:46px}
-.nav-brand .bt{display:flex;flex-direction:column;line-height:1}
-.nav-brand .bt b{font-family:var(--display);font-weight:500;font-size:1.05rem;letter-spacing:.12em;color:var(--ink)}
-.nav-brand .bt small{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.34em;font-size:.56rem;color:var(--pewter);margin-top:.32rem}
 .nav-links{display:flex;align-items:center;gap:2.4rem;list-style:none}
 .nav-links a{
   font-family:var(--display);font-weight:400;letter-spacing:.02em;
@@ -410,20 +407,17 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
 </head>
 <body>
 
-<!-- LOADER -->
 <div id="loader">
   <div class="load-mark" aria-hidden="true">
     <span style="animation-delay:.05s">Φ</span><span style="animation-delay:.1s">Ι</span><span style="animation-delay:.15s">Ν</span><span style="animation-delay:.2s">Φ</span><span style="animation-delay:.25s">Ι</span><span style="animation-delay:.3s">Ν</span><span style="animation-delay:.35s">Η</span><span style="animation-delay:.4s">Σ</span>
   </div>
   <div class="load-line"></div>
-  <div class="load-sub">Λογιστικό &amp; Φοροτεχνικό Γραφείο</div>
+  <div class="load-sub">Λογιστικό & Φοροτεχνικό Γραφείο</div>
 </div>
 
-<!-- NAV -->
 <nav id="nav">
   <a href="#top" class="nav-brand" aria-label="ΦΙΝΦΙΝΗΣ αρχική">
     <img src="https://raw.githubusercontent.com/agelmet/FINFINIS/refs/heads/main/logooreo.jpg" alt="Λογότυπο ΦΙΝΦΙΝΗΣ" loading="eager">
-    <span class="bt"><b>ΦΙΝΦΙΝΗΣ</b><small>Πειραιάς</small></span>
   </a>
   <ul class="nav-links">
     <li><a href="#about">Το γραφείο μας</a></li>
@@ -445,7 +439,6 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
 
 <main id="top">
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-panel">
     <div class="hero-bg" id="heroBg"></div>
@@ -474,7 +467,6 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
   </div>
 </section>
 
-<!-- MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     <span>Λογιστική</span><span>Φοροτεχνικά</span><span>Έναρξη Επιχείρησης</span><span>Μισθοδοσία</span><span>Συμβουλευτική</span><span>Ανθρώπινο Δυναμικό</span>
@@ -482,7 +474,6 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
   </div>
 </div>
 
-<!-- ABOUT -->
 <section class="about sec-pad" id="about">
   <div class="wrap">
     <div class="eyebrow reveal"><span class="num">01</span>Το γραφείο μας</div>
@@ -504,14 +495,13 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
       </div>
       <div class="about-portrait reveal d2">
         <div class="frame">
-          <img src="https://images.unsplash.com/photo-1664575602554-2087b04935a5?auto=format&fit=crop&w=1100&q=80" alt="Επαγγελματικό περιβάλλον γραφείου — οικονομική ανάλυση και συνεργασία" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1100&q=80" alt="Επαγγελματικό περιβάλλον γραφείου — οικονομική ανάλυση και συνεργασία" loading="lazy">
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PARALLAX BANNER 1 -->
 <section class="parallax">
   <div class="parallax-bg" id="px1" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2000&q=80')"></div>
   <div class="wrap">
@@ -519,7 +509,6 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="services sec-pad" id="services">
   <div class="wrap">
     <div class="eyebrow reveal"><span class="num">02</span>Οι υπηρεσίες μας</div>
@@ -552,7 +541,7 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
       <article class="svc">
         <div class="svc-head">
           <span class="svc-num">IV</span>
-          <h3 class="svc-name">Υποστήριξη Μισθοδοσίας &amp; Ανθρωπίνου Δυναμικού</h3>
+          <h3 class="svc-name">Υποστήριξη Μισθοδοσίας & Ανθρωπίνου Δυναμικού</h3>
           <span class="svc-toggle" aria-hidden="true"></span>
         </div>
         <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Το ανθρώπινο δυναμικό είναι ο πιο πολύτιμος πόρος της επιχείρησης, αλλά και ένα από τα μεγαλύτερα κόστη της. Αναλαμβάνουμε τη μισθοδοσία, τις ασφαλιστικές υποχρεώσεις και την εργατική παρακολούθηση με ακρίβεια, και σας στηρίζουμε στη στρατηγική διαχείριση του προσωπικού — ώστε να κρατάτε ισορροπία ανάμεσα στην απόδοση των ανθρώπων σας και τη σταθερότητα των οικονομικών σας.</p></div></div>
@@ -561,7 +550,6 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
   </div>
 </section>
 
-<!-- PROCESS -->
 <section class="process sec-pad" id="process">
   <div class="wrap">
     <div class="eyebrow reveal"><span class="num">03</span>Η Συνεργασία</div>
@@ -591,15 +579,13 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
   </div>
 </section>
 
-<!-- PARALLAX BANNER 2 -->
 <section class="parallax">
-  <div class="parallax-bg" id="px2" style="background-image:url('https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=2000&q=80')"></div>
+  <div class="parallax-bg" id="px2" style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80')"></div>
   <div class="wrap">
     <p class="big reveal">Το φορολογικό τοπίο αλλάζει.<br><b>Η σχέση σας με τον λογιστή σας δεν πρέπει.</b></p>
   </div>
 </section>
 
-<!-- PHILOSOPHY -->
 <section class="philosophy sec-pad">
   <div class="wrap">
     <div class="eyebrow reveal"><span class="num">04</span>Η Φιλοσοφία μας</div>
@@ -624,7 +610,6 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
   </div>
 </section>
 
-<!-- REVIEWS -->
 <section class="reviews sec-pad">
   <div class="wrap">
     <div class="eyebrow reveal"><span class="num">05</span>Λόγια Πελατών</div>
@@ -660,7 +645,6 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
   </div>
 </section>
 
-<!-- FAQ -->
 <section class="faq sec-pad" id="faq">
   <div class="wrap">
     <div class="eyebrow reveal"><span class="num">06</span>Συχνές Ερωτήσεις</div>
@@ -686,7 +670,6 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact sec-pad" id="contact">
   <div class="contact-bg" id="contactBg" style="background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2000&q=80')"></div>
   <div class="wrap">
@@ -696,7 +679,7 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
       <div>
         <div class="ci reveal d1">
           <div class="lbl">Τοποθεσία</div>
-          <p>Αντιπλοιάρχου Βλαχάκου &amp; Μεθώνης 36<br>Πειραιάς, 2ος όροφος</p>
+          <p>Αντιπλοιάρχου Βλαχάκου & Μεθώνης 36<br>Πειραιάς, 2ος όροφος</p>
         </div>
         <div class="ci reveal d2">
           <div class="lbl">Πληροφορίες</div>
@@ -721,14 +704,13 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
 
 </main>
 
-<!-- FOOTER -->
 <footer>
   <div class="foot-in">
     <a href="#top" class="foot-brand">
       <img src="https://raw.githubusercontent.com/agelmet/FINFINIS/refs/heads/main/logooreo.jpg" alt="Λογότυπο ΦΙΝΦΙΝΗΣ" loading="lazy">
       <b>ΜΙΧΑΗΛ Θ. ΦΙΝΦΙΝΗΣ</b>
     </a>
-    <div class="foot-copy">© <span id="yr"></span> ΦΙΝΦΙΝΗΣ — Λογιστικό &amp; Φοροτεχνικό Γραφείο · Πειραιάς</div>
+    <div class="foot-copy">© <span id="yr"></span> ΦΙΝΦΙΝΗΣ — Λογιστικό & Φοροτεχνικό Γραφείο · Πειραιάς</div>
   </div>
 </footer>
 
