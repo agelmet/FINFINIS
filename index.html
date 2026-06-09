@@ -4,23 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ΦΙΝΦΙΝΗΣ | Λογιστικό & Φοροτεχνικό Γραφείο στον Πειραιά</title>
-<meta name="description" content="Λογιστικό γραφείο Μιχαήλ Θ. Φινφινής στον Πειραιά. Λογιστική παρακολούθηση, φοροτεχνική συμβουλευτική, έναρξη επιχείρησης, μισθοδοσία. Ακρίβεια, εμπιστοσύνη, διορατικότητα.">
+<meta name="description" content="Λογιστικό γραφείο Μιχαήλ Θ. Φινφινής στον Πειραιά. Λογιστική παρακολούθηση, φοροτεχνική συμβουλευτική, έναρξη επιχείρησης, μισθοδοσία για επιχειρήσεις. Εμπειρία, επαγγελματισμός, υπευθυνότητα.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&family=Archivo+Narrow:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Archivo+Narrow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0d1b2a;
-  --ink-2:#13263b;
-  --paper:#f4f0e6;
-  --paper-2:#ebe4d3;
-  --brass:#c79a3e;
-  --brass-deep:#a87f29;
-  --line:rgba(199,154,62,.28);
-  --muted:#7a8696;
-  --white:#fbfaf6;
-  --display:'Fraunces',Georgia,serif;
-  --body:'Archivo',system-ui,sans-serif;
+  /* Reference palette: cool light gray, warm greige/taupe, charcoal, pewter */
+  --bg:#eceef0;          /* page light cool gray */
+  --bg-warm:#b9b3a9;     /* warm greige panels */
+  --bg-warm-2:#a9a39a;   /* deeper greige */
+  --char:#5b5751;        /* charcoal panels */
+  --char-2:#46433f;      /* deep charcoal */
+  --ink:#3a3833;         /* text on light */
+  --paper:#f6f5f2;       /* off-white text on dark */
+  --pewter:#8d8a84;      /* muted accent */
+  --pewter-light:#cfcbc4;
+  --muted:#86827b;
+  --line:rgba(91,87,81,.22);
+  --line-light:rgba(246,245,242,.28);
+  --display:'Jost',system-ui,sans-serif;
+  --body:'Jost',system-ui,sans-serif;
   --narrow:'Archivo Narrow',sans-serif;
   --ease:cubic-bezier(.16,1,.3,1);
   --ease-soft:cubic-bezier(.4,0,.2,1);
@@ -31,32 +35,33 @@
 html{scroll-behavior:smooth}
 body{
   font-family:var(--body);
-  background:var(--ink);
-  color:var(--paper);
+  background:var(--bg);
+  color:var(--ink);
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
   line-height:1.6;
+  font-weight:300;
 }
-::selection{background:var(--brass);color:var(--ink)}
+::selection{background:var(--char);color:var(--paper)}
 ::-webkit-scrollbar{width:11px}
-::-webkit-scrollbar-track{background:var(--ink)}
-::-webkit-scrollbar-thumb{background:var(--brass-deep);border-radius:0}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--pewter);border-radius:0}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 section{position:relative}
-.wrap{max-width:1280px;margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.wrap{max-width:1340px;margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
 
 /* ---------- LOADER ---------- */
 #loader{
-  position:fixed;inset:0;z-index:9999;background:var(--ink);
+  position:fixed;inset:0;z-index:9999;background:var(--char);
   display:flex;align-items:center;justify-content:center;flex-direction:column;
   transition:opacity .8s var(--ease),visibility .8s;
 }
 #loader.done{opacity:0;visibility:hidden}
 .load-mark{
-  font-family:var(--display);font-weight:600;letter-spacing:.04em;
-  font-size:clamp(2.2rem,7vw,4.5rem);color:var(--paper);
-  overflow:hidden;display:flex;
+  font-family:var(--display);font-weight:300;letter-spacing:.18em;
+  font-size:clamp(2rem,7vw,4rem);color:var(--paper);
+  overflow:hidden;display:flex;padding-left:.18em;
 }
 .load-mark span{
   display:inline-block;transform:translateY(110%);
@@ -64,13 +69,13 @@ section{position:relative}
 }
 @keyframes loadUp{to{transform:translateY(0)}}
 .load-line{
-  height:1px;background:var(--brass);width:0;margin-top:1.4rem;
+  height:1px;background:var(--pewter-light);width:0;margin-top:1.6rem;
   animation:loadLine 1s var(--ease) .7s forwards;
 }
 @keyframes loadLine{to{width:min(280px,60vw)}}
 .load-sub{
-  font-family:var(--narrow);text-transform:uppercase;letter-spacing:.4em;
-  font-size:.7rem;color:var(--brass);margin-top:1.1rem;opacity:0;
+  font-family:var(--narrow);text-transform:uppercase;letter-spacing:.42em;
+  font-size:.7rem;color:var(--pewter-light);margin-top:1.2rem;opacity:0;
   animation:fadeIn .6s ease 1.3s forwards;
 }
 @keyframes fadeIn{to{opacity:1}}
@@ -79,51 +84,52 @@ section{position:relative}
 nav{
   position:fixed;top:0;left:0;right:0;z-index:1000;
   display:flex;align-items:center;justify-content:space-between;
-  padding:1.3rem var(--pad);
+  padding:1.4rem var(--pad);
   transition:background .5s var(--ease),padding .5s var(--ease),box-shadow .5s var(--ease);
 }
 nav.scrolled{
-  background:rgba(13,27,42,.92);backdrop-filter:blur(14px);
-  padding-top:.8rem;padding-bottom:.8rem;
+  background:rgba(236,238,240,.9);backdrop-filter:blur(14px);
+  padding-top:.85rem;padding-bottom:.85rem;
   box-shadow:0 1px 0 var(--line);
 }
-.nav-brand{display:flex;align-items:center;gap:.8rem}
-.nav-brand img{height:46px;width:auto;border-radius:50%;border:1px solid var(--line);transition:height .5s var(--ease)}
-nav.scrolled .nav-brand img{height:40px}
+.nav-brand{display:flex;align-items:center;gap:.85rem}
+.nav-brand img{height:54px;width:auto;transition:height .5s var(--ease)}
+nav.scrolled .nav-brand img{height:46px}
 .nav-brand .bt{display:flex;flex-direction:column;line-height:1}
-.nav-brand .bt b{font-family:var(--display);font-weight:600;font-size:1.05rem;letter-spacing:.02em}
-.nav-brand .bt small{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.34em;font-size:.56rem;color:var(--brass);margin-top:.3rem}
-.nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none}
+.nav-brand .bt b{font-family:var(--display);font-weight:500;font-size:1.05rem;letter-spacing:.12em;color:var(--ink)}
+.nav-brand .bt small{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.34em;font-size:.56rem;color:var(--pewter);margin-top:.32rem}
+.nav-links{display:flex;align-items:center;gap:2.4rem;list-style:none}
 .nav-links a{
-  font-family:var(--narrow);text-transform:uppercase;letter-spacing:.18em;
-  font-size:.78rem;position:relative;padding:.3rem 0;color:var(--paper);
+  font-family:var(--display);font-weight:400;letter-spacing:.02em;
+  font-size:1rem;position:relative;padding:.3rem 0;color:var(--ink);
 }
 .nav-links a::after{
-  content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--brass);
+  content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--char);
   transition:width .4s var(--ease);
 }
 .nav-links a:hover::after{width:100%}
 .nav-cta{
-  font-family:var(--narrow);text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;
-  border:1px solid var(--brass);color:var(--brass);padding:.65rem 1.4rem;
+  font-family:var(--display);font-weight:400;letter-spacing:.02em;font-size:1rem;
+  border:1px solid var(--char);color:var(--ink);padding:.6rem 1.5rem;border-radius:30px;
   transition:background .4s var(--ease),color .4s var(--ease);
 }
-.nav-cta:hover{background:var(--brass);color:var(--ink)}
+.nav-cta:hover{background:var(--char);color:var(--paper)}
 .burger{display:none;background:none;border:none;cursor:pointer;width:34px;height:24px;position:relative;z-index:1100}
-.burger span{position:absolute;left:0;height:2px;width:100%;background:var(--paper);transition:.4s var(--ease)}
+.burger span{position:absolute;left:0;height:2px;width:100%;background:var(--ink);transition:.4s var(--ease)}
 .burger span:nth-child(1){top:2px}
 .burger span:nth-child(2){top:11px}
 .burger span:nth-child(3){top:20px}
+.burger.open span{background:var(--paper)}
 .burger.open span:nth-child(1){top:11px;transform:rotate(45deg)}
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){top:11px;transform:rotate(-45deg)}
 .mobile-menu{
-  position:fixed;inset:0;z-index:1050;background:var(--ink-2);
+  position:fixed;inset:0;z-index:1050;background:var(--char);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem;
   opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s;
 }
 .mobile-menu.open{opacity:1;visibility:visible}
-.mobile-menu a{font-family:var(--display);font-size:1.8rem;font-weight:500;opacity:0;transform:translateY(20px);transition:.5s var(--ease)}
+.mobile-menu a{font-family:var(--display);font-size:1.9rem;font-weight:300;color:var(--paper);opacity:0;transform:translateY(20px);transition:.5s var(--ease)}
 .mobile-menu.open a{opacity:1;transform:none}
 .mobile-menu.open a:nth-child(1){transition-delay:.1s}
 .mobile-menu.open a:nth-child(2){transition-delay:.16s}
@@ -133,54 +139,60 @@ nav.scrolled .nav-brand img{height:40px}
 
 /* ---------- HERO ---------- */
 .hero{
-  min-height:100vh;display:flex;align-items:center;
-  position:relative;overflow:hidden;
+  min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr;
+  position:relative;overflow:hidden;background:var(--bg);
+}
+.hero-panel{
+  position:relative;overflow:hidden;display:flex;align-items:center;
 }
 .hero-bg{
   position:absolute;inset:0;z-index:0;
-  background:linear-gradient(180deg,rgba(13,27,42,.72),rgba(13,27,42,.86)),
-  url('https://images.unsplash.com/photo-1554469384-e58fbf5dd2eb?auto=format&fit=crop&w=2000&q=80');
+  background:linear-gradient(180deg,rgba(91,87,81,.42),rgba(91,87,81,.58)),
+  url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80');
   background-size:cover;background-position:center;
-  will-change:transform;
+  filter:grayscale(.6);will-change:transform;
 }
-.hero-grain{position:absolute;inset:0;z-index:1;opacity:.5;
-  background:radial-gradient(circle at 80% 20%,rgba(199,154,62,.14),transparent 55%);
-}
-.hero .wrap{position:relative;z-index:2;width:100%}
+.hero-content{position:relative;z-index:2;padding:clamp(2rem,6vw,5rem);padding-top:14vh;max-width:640px}
 .hero-eyebrow{
   font-family:var(--narrow);text-transform:uppercase;letter-spacing:.42em;font-size:.74rem;
-  color:var(--brass);display:flex;align-items:center;gap:1rem;margin-bottom:1.6rem;
+  color:var(--paper);display:flex;align-items:center;gap:1rem;margin-bottom:1.8rem;
 }
-.hero-eyebrow .ln{height:1px;width:46px;background:var(--brass)}
+.hero-eyebrow .ln{height:1px;width:46px;background:var(--paper)}
 .hero h1{
-  font-family:var(--display);font-weight:500;
-  font-size:clamp(2.7rem,8vw,6.4rem);line-height:1.02;letter-spacing:-.01em;
-  max-width:16ch;
+  font-family:var(--display);font-weight:300;color:var(--paper);
+  font-size:clamp(2.6rem,5.2vw,5rem);line-height:1.04;letter-spacing:-.005em;
 }
-.hero h1 em{font-style:italic;color:var(--brass)}
 .hero p.lede{
-  margin-top:1.8rem;max-width:46ch;font-size:clamp(1rem,1.4vw,1.18rem);
-  color:rgba(244,240,230,.82);
+  margin-top:1.8rem;max-width:42ch;font-size:clamp(1rem,1.3vw,1.16rem);font-weight:300;
+  color:rgba(246,245,242,.9);
 }
-.hero-actions{display:flex;gap:1.1rem;margin-top:2.6rem;flex-wrap:wrap}
+.hero-actions{display:flex;gap:1rem;margin-top:2.8rem;flex-wrap:wrap}
 .btn{
-  font-family:var(--narrow);text-transform:uppercase;letter-spacing:.18em;font-size:.82rem;
-  padding:1rem 2rem;display:inline-flex;align-items:center;gap:.7rem;cursor:pointer;border:none;
+  font-family:var(--display);font-weight:400;letter-spacing:.02em;font-size:1rem;
+  padding:.95rem 2.1rem;display:inline-flex;align-items:center;gap:.7rem;cursor:pointer;border:none;border-radius:32px;
   transition:.4s var(--ease);
 }
-.btn-solid{background:var(--brass);color:var(--ink)}
-.btn-solid:hover{background:var(--paper)}
-.btn-ghost{background:transparent;color:var(--paper);border:1px solid var(--line)}
-.btn-ghost:hover{border-color:var(--brass);color:var(--brass)}
-.hero-meta{
-  position:absolute;bottom:2.4rem;left:var(--pad);right:var(--pad);z-index:2;
-  display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;
+.btn-solid{background:var(--char-2);color:var(--paper)}
+.btn-solid:hover{background:var(--ink)}
+.btn-ghost{background:transparent;color:var(--paper);border:1px solid var(--line-light)}
+.btn-ghost:hover{border-color:var(--paper);background:rgba(246,245,242,.1)}
+.hero-aside{
+  position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:clamp(2rem,5vw,4rem);background:var(--bg);
 }
-.scroll-cue{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.3em;font-size:.66rem;color:var(--muted);display:flex;align-items:center;gap:.7rem}
-.scroll-cue .dot{width:1px;height:38px;background:var(--brass);position:relative;overflow:hidden}
-.scroll-cue .dot::after{content:"";position:absolute;top:0;left:0;width:100%;height:40%;background:var(--paper);animation:cue 1.8s var(--ease) infinite}
+.hero-aside .floatmark{
+  position:absolute;top:12vh;right:clamp(2rem,5vw,4rem);font-family:var(--display);
+  font-weight:300;font-size:clamp(4rem,11vw,9rem);color:rgba(91,87,81,.07);line-height:.8;letter-spacing:-.02em;user-select:none;
+}
+.hero-aside-inner{position:relative;z-index:2}
+.hero-aside h2{font-family:var(--display);font-weight:300;font-size:clamp(1.4rem,2.4vw,2.1rem);color:var(--ink);line-height:1.2;margin-bottom:1.2rem}
+.hero-aside p{color:var(--muted);max-width:38ch;margin-bottom:2rem}
+.hero-pills{display:flex;flex-wrap:wrap;gap:.7rem}
+.pill{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.2em;font-size:.7rem;padding:.55rem 1.1rem;border:1px solid var(--line);border-radius:30px;color:var(--ink)}
+.scroll-cue{display:flex;align-items:center;gap:.7rem;margin-top:2.6rem;font-family:var(--narrow);text-transform:uppercase;letter-spacing:.3em;font-size:.66rem;color:var(--muted)}
+.scroll-cue .dot{width:1px;height:42px;background:var(--pewter);position:relative;overflow:hidden}
+.scroll-cue .dot::after{content:"";position:absolute;top:0;left:0;width:100%;height:40%;background:var(--char);animation:cue 1.8s var(--ease) infinite}
 @keyframes cue{0%{transform:translateY(-100%)}100%{transform:translateY(280%)}}
-.hero-est{font-family:var(--display);font-style:italic;font-size:.95rem;color:rgba(244,240,230,.6)}
 
 /* hero entrance */
 .h-anim{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
@@ -189,168 +201,176 @@ nav.scrolled .nav-brand img{height:40px}
 .loaded .h-anim.d2{transition-delay:.3s}
 .loaded .h-anim.d3{transition-delay:.45s}
 .loaded .h-anim.d4{transition-delay:.6s}
+.loaded .h-anim.d5{transition-delay:.75s}
 
 /* ---------- MARQUEE ---------- */
-.marquee{background:var(--brass);color:var(--ink);overflow:hidden;padding:1rem 0;border-top:1px solid var(--brass-deep);border-bottom:1px solid var(--brass-deep)}
-.marquee-track{display:flex;white-space:nowrap;will-change:transform;animation:scrollx 34s linear infinite}
+.marquee{background:var(--char);color:var(--paper);overflow:hidden;padding:1.05rem 0}
+.marquee-track{display:flex;white-space:nowrap;will-change:transform;animation:scrollx 36s linear infinite}
 .marquee:hover .marquee-track{animation-play-state:paused}
-.marquee span{font-family:var(--display);font-weight:500;font-size:1.25rem;padding:0 2.2rem;display:inline-flex;align-items:center;gap:2.2rem}
-.marquee span::after{content:"◆";font-size:.7rem;color:var(--brass-deep)}
+.marquee span{font-family:var(--display);font-weight:300;font-size:1.3rem;letter-spacing:.04em;padding:0 2.2rem;display:inline-flex;align-items:center;gap:2.2rem}
+.marquee span::after{content:"";width:5px;height:5px;background:var(--pewter-light);display:inline-block}
 @keyframes scrollx{to{transform:translateX(-50%)}}
 
 /* ---------- SECTION SHELL ---------- */
 .sec-pad{padding-top:var(--sec);padding-bottom:var(--sec)}
 .eyebrow{
   font-family:var(--narrow);text-transform:uppercase;letter-spacing:.36em;font-size:.74rem;
-  color:var(--brass);display:flex;align-items:center;gap:.9rem;margin-bottom:1.4rem;
+  color:var(--pewter);display:flex;align-items:center;gap:.9rem;margin-bottom:1.5rem;
 }
-.eyebrow .num{font-family:var(--display);font-style:italic;font-size:1rem;color:var(--paper)}
-.sec-title{font-family:var(--display);font-weight:500;font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.06;letter-spacing:-.01em}
-.sec-title em{font-style:italic;color:var(--brass)}
+.eyebrow .num{font-family:var(--display);font-weight:400;font-size:1rem;color:var(--ink)}
+.sec-title{font-family:var(--display);font-weight:300;font-size:clamp(2rem,4.6vw,3.7rem);line-height:1.08;letter-spacing:-.01em;color:var(--ink)}
+.sec-title em{font-style:normal;color:var(--pewter)}
 
 /* ---------- ABOUT ---------- */
-.about{background:var(--paper);color:var(--ink)}
-.about .eyebrow{color:var(--brass-deep)}
-.about .eyebrow .num{color:var(--ink)}
-.about .sec-title em{color:var(--brass-deep)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,6rem);align-items:center;margin-top:3rem}
+.about{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,6rem);align-items:center;margin-top:3.2rem}
 .about-portrait{position:relative}
-.about-portrait .frame{
-  position:relative;overflow:hidden;background:var(--ink);
-}
-.about-portrait img{filter:grayscale(.35) contrast(1.05);transition:transform 1.2s var(--ease),filter 1.2s var(--ease);width:100%;height:100%;object-fit:cover;min-height:420px}
-.about-portrait:hover img{transform:scale(1.05);filter:grayscale(0)}
-.about-portrait::after{content:"";position:absolute;top:18px;left:18px;right:-18px;bottom:-18px;border:1px solid var(--brass-deep);z-index:-1}
-.about-name{font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:.3rem}
-.about-role{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.26em;font-size:.78rem;color:var(--brass-deep);margin-bottom:1.8rem}
-.about p{margin-bottom:1.1rem;color:#3a4654;max-width:54ch}
+.about-portrait .frame{position:relative;overflow:hidden;background:var(--char)}
+.about-portrait img{filter:grayscale(.9) contrast(1.02);transition:transform 1.2s var(--ease),filter 1.2s var(--ease);width:100%;height:100%;object-fit:cover;min-height:460px}
+.about-portrait:hover img{transform:scale(1.05);filter:grayscale(.5)}
+.about-portrait::after{content:"";position:absolute;top:20px;left:20px;right:-20px;bottom:-20px;border:1px solid var(--pewter);z-index:-1}
+.about-name{font-family:var(--display);font-weight:500;font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:.3rem;color:var(--ink)}
+.about-role{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.26em;font-size:.78rem;color:var(--pewter);margin-bottom:1.9rem}
+.about p{margin-bottom:1.1rem;color:var(--muted);max-width:54ch}
 .pullquote{
-  font-family:var(--display);font-style:italic;font-weight:500;
-  font-size:clamp(1.3rem,2.4vw,1.9rem);line-height:1.3;color:var(--ink);
-  border-left:2px solid var(--brass-deep);padding-left:1.6rem;margin:2rem 0;
+  font-family:var(--display);font-weight:300;
+  font-size:clamp(1.3rem,2.4vw,1.95rem);line-height:1.32;color:var(--ink);
+  border-left:2px solid var(--pewter);padding-left:1.6rem;margin:2.1rem 0;
 }
-.about-stats{display:flex;gap:2.6rem;margin-top:2.2rem;flex-wrap:wrap}
-.stat .n{font-family:var(--display);font-weight:600;font-size:2.4rem;color:var(--brass-deep);line-height:1}
-.stat .l{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.18em;font-size:.68rem;color:var(--muted);margin-top:.4rem}
+.about-stats{display:flex;gap:2.8rem;margin-top:2.3rem;flex-wrap:wrap}
+.stat .n{font-family:var(--display);font-weight:300;font-size:2.6rem;color:var(--ink);line-height:1}
+.stat .l{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.18em;font-size:.68rem;color:var(--pewter);margin-top:.4rem}
 
 /* ---------- PARALLAX BANNER ---------- */
 .parallax{
-  min-height:62vh;display:flex;align-items:center;justify-content:center;
+  min-height:64vh;display:flex;align-items:center;justify-content:center;
   position:relative;overflow:hidden;text-align:center;
 }
-.parallax-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;will-change:transform}
-.parallax::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(rgba(13,27,42,.78),rgba(13,27,42,.84))}
+.parallax-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;filter:grayscale(.7);will-change:transform}
+.parallax::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(rgba(70,67,63,.72),rgba(70,67,63,.8))}
 .parallax .wrap{position:relative;z-index:2}
-.parallax .big{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(1.7rem,4vw,3.1rem);line-height:1.25;max-width:24ch;margin:0 auto;color:var(--paper)}
-.parallax .big b{color:var(--brass);font-style:normal;font-weight:600}
+.parallax .big{font-family:var(--display);font-weight:300;font-size:clamp(1.7rem,4vw,3.1rem);line-height:1.28;max-width:24ch;margin:0 auto;color:var(--paper)}
+.parallax .big b{color:var(--pewter-light);font-weight:500}
 
 /* ---------- SERVICES ---------- */
-.services{background:var(--ink-2)}
-.svc-list{margin-top:3.4rem;border-top:1px solid var(--line)}
-.svc{
-  border-bottom:1px solid var(--line);cursor:pointer;
-  transition:background .4s var(--ease);
-}
-.svc:hover{background:rgba(199,154,62,.05)}
-.svc-head{display:grid;grid-template-columns:auto 1fr auto;gap:1.6rem;align-items:center;padding:1.9rem 0}
-.svc-num{font-family:var(--display);font-style:italic;font-size:1.1rem;color:var(--brass)}
-.svc-name{font-family:var(--display);font-weight:500;font-size:clamp(1.35rem,2.6vw,2rem);transition:color .4s var(--ease)}
-.svc:hover .svc-name{color:var(--brass)}
-.svc-toggle{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;position:relative;flex-shrink:0;transition:.4s var(--ease)}
-.svc-toggle::before,.svc-toggle::after{content:"";position:absolute;background:var(--brass);left:50%;top:50%;transition:.4s var(--ease)}
+.services{background:var(--char)}
+.services .eyebrow{color:var(--pewter-light)}
+.services .eyebrow .num{color:var(--paper)}
+.services .sec-title{color:var(--paper)}
+.services .sec-title em{color:var(--pewter-light)}
+.svc-list{margin-top:3.4rem;border-top:1px solid var(--line-light)}
+.svc{border-bottom:1px solid var(--line-light);cursor:pointer;transition:background .4s var(--ease)}
+.svc:hover{background:rgba(246,245,242,.04)}
+.svc-head{display:grid;grid-template-columns:auto 1fr auto;gap:1.6rem;align-items:center;padding:2rem 0}
+.svc-num{font-family:var(--display);font-weight:300;font-size:1.2rem;color:var(--pewter-light)}
+.svc-name{font-family:var(--display);font-weight:300;font-size:clamp(1.35rem,2.6vw,2.1rem);color:var(--paper);transition:color .4s var(--ease)}
+.svc:hover .svc-name{color:var(--pewter-light)}
+.svc-toggle{width:36px;height:36px;border:1px solid var(--line-light);border-radius:50%;position:relative;flex-shrink:0;transition:.4s var(--ease)}
+.svc-toggle::before,.svc-toggle::after{content:"";position:absolute;background:var(--paper);left:50%;top:50%;transition:.4s var(--ease)}
 .svc-toggle::before{width:13px;height:1.5px;transform:translate(-50%,-50%)}
 .svc-toggle::after{width:1.5px;height:13px;transform:translate(-50%,-50%)}
-.svc.active .svc-toggle{background:var(--brass);border-color:var(--brass)}
-.svc.active .svc-toggle::before,.svc.active .svc-toggle::after{background:var(--ink)}
+.svc.active .svc-toggle{background:var(--paper);border-color:var(--paper)}
+.svc.active .svc-toggle::before,.svc.active .svc-toggle::after{background:var(--char)}
 .svc.active .svc-toggle::after{transform:translate(-50%,-50%) scaleY(0)}
 .svc-body{max-height:0;overflow:hidden;transition:max-height .55s var(--ease)}
-.svc-body-inner{padding:0 0 2.2rem 0;display:grid;grid-template-columns:auto 1fr;gap:1.6rem;color:rgba(244,240,230,.8)}
+.svc-body-inner{padding:0 0 2.3rem 0;display:grid;grid-template-columns:auto 1fr;gap:1.6rem;color:rgba(246,245,242,.82);font-weight:300}
 .svc-body-inner .sp{grid-column:1}
-.svc-body-inner p{max-width:64ch}
+.svc-body-inner p{max-width:66ch}
 
 /* ---------- PROCESS ---------- */
-.process{background:var(--paper);color:var(--ink)}
-.process .eyebrow{color:var(--brass-deep)}
-.process .eyebrow .num{color:var(--ink)}
-.process .sec-title em{color:var(--brass-deep)}
+.process{background:var(--bg-warm)}
+.process .eyebrow{color:var(--char-2)}
+.process .eyebrow .num{color:var(--char-2)}
+.process .sec-title{color:var(--char-2)}
+.process .sec-title em{color:var(--paper)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3.6rem;counter-reset:step}
-.step{padding:2.2rem 1.6rem 2.2rem 0;border-top:2px solid var(--ink);position:relative}
-.step:not(:last-child){border-right:1px solid var(--line)}
-.step:not(:last-child){padding-right:1.6rem}
+.step{padding:2.3rem 1.6rem 2.3rem 0;border-top:2px solid var(--char-2);position:relative}
+.step:not(:last-child){border-right:1px solid rgba(70,67,63,.2);padding-right:1.6rem}
 .step:not(:first-child){padding-left:1.6rem}
-.step-n{font-family:var(--display);font-style:italic;font-weight:600;font-size:1.4rem;color:var(--brass-deep);margin-bottom:1.1rem}
-.step h3{font-family:var(--display);font-weight:600;font-size:1.3rem;margin-bottom:.7rem}
-.step p{font-size:.95rem;color:#46525f}
+.step-n{font-family:var(--display);font-weight:400;font-size:1.5rem;color:var(--char-2);margin-bottom:1.1rem}
+.step h3{font-family:var(--display);font-weight:500;font-size:1.35rem;margin-bottom:.7rem;color:var(--char-2)}
+.step p{font-size:.95rem;color:var(--char);font-weight:300}
 
 /* ---------- PHILOSOPHY ---------- */
-.philosophy{background:var(--ink)}
+.philosophy{background:var(--bg)}
 .phil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3.4rem}
 .phil-card{
-  border:1px solid var(--line);padding:2.4rem 2rem;position:relative;overflow:hidden;
+  border:1px solid var(--line);padding:2.6rem 2.1rem;position:relative;overflow:hidden;background:var(--paper);
   transition:.5s var(--ease);
 }
-.phil-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
-.phil-card:hover{background:var(--ink-2);transform:translateY(-6px)}
+.phil-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:var(--char);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.phil-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -28px rgba(70,67,63,.4)}
 .phil-card:hover::before{transform:scaleX(1)}
-.phil-icon{width:42px;height:42px;margin-bottom:1.5rem}
-.phil-icon svg{width:100%;height:100%;stroke:var(--brass);fill:none;stroke-width:1.4}
-.phil-card h3{font-family:var(--display);font-weight:500;font-size:1.5rem;margin-bottom:.8rem}
-.phil-card p{color:rgba(244,240,230,.72);font-size:.97rem}
+.phil-icon{width:44px;height:44px;margin-bottom:1.6rem}
+.phil-icon svg{width:100%;height:100%;stroke:var(--char);fill:none;stroke-width:1.3}
+.phil-card h3{font-family:var(--display);font-weight:400;font-size:1.55rem;margin-bottom:.8rem;color:var(--ink)}
+.phil-card p{color:var(--muted);font-size:.97rem;font-weight:300}
 
 /* ---------- TESTIMONIALS ---------- */
-.reviews{background:var(--ink-2);overflow:hidden}
+.reviews{background:var(--char-2);overflow:hidden}
+.reviews .eyebrow{color:var(--pewter-light)}
+.reviews .eyebrow .num{color:var(--paper)}
+.reviews .sec-title{color:var(--paper)}
+.reviews .sec-title em{color:var(--pewter-light)}
 .rev-viewport{overflow:hidden;margin-top:3.4rem}
 .rev-track{display:flex;gap:1.6rem;transition:transform .7s var(--ease)}
 .rev-card{
-  flex:0 0 clamp(280px,42vw,440px);background:var(--ink);border:1px solid var(--line);
-  padding:2.4rem;display:flex;flex-direction:column;
+  flex:0 0 clamp(280px,42vw,440px);background:var(--char);border:1px solid var(--line-light);
+  padding:2.6rem;display:flex;flex-direction:column;
 }
-.rev-stars{color:var(--brass);letter-spacing:.2em;margin-bottom:1.2rem;font-size:.9rem}
-.rev-text{font-family:var(--display);font-size:1.15rem;line-height:1.5;font-style:italic;color:var(--paper);margin-bottom:1.6rem}
-.rev-author{margin-top:auto;font-family:var(--narrow);text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;color:var(--brass)}
-.rev-author span{display:block;color:var(--muted);text-transform:none;letter-spacing:0;font-family:var(--body);font-size:.82rem;margin-top:.3rem}
+.rev-stars{color:var(--pewter-light);letter-spacing:.3em;margin-bottom:1.2rem;font-size:.9rem}
+.rev-text{font-family:var(--display);font-weight:300;font-size:1.18rem;line-height:1.5;color:var(--paper);margin-bottom:1.6rem}
+.rev-author{margin-top:auto;font-family:var(--narrow);text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;color:var(--pewter-light)}
+.rev-author span{display:block;color:var(--muted);text-transform:none;letter-spacing:0;font-family:var(--body);font-size:.82rem;margin-top:.3rem;font-weight:300}
 .rev-nav{display:flex;gap:.8rem;margin-top:2rem}
-.rev-btn{width:48px;height:48px;border:1px solid var(--line);background:transparent;color:var(--paper);cursor:pointer;transition:.4s var(--ease);display:flex;align-items:center;justify-content:center}
-.rev-btn:hover{background:var(--brass);color:var(--ink);border-color:var(--brass)}
+.rev-btn{width:50px;height:50px;border:1px solid var(--line-light);background:transparent;color:var(--paper);cursor:pointer;transition:.4s var(--ease);display:flex;align-items:center;justify-content:center;border-radius:50%}
+.rev-btn:hover{background:var(--paper);color:var(--char);border-color:var(--paper)}
 .rev-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6}
 
 /* ---------- FAQ ---------- */
-.faq{background:var(--paper);color:var(--ink)}
-.faq .eyebrow{color:var(--brass-deep)}
-.faq .eyebrow .num{color:var(--ink)}
-.faq .sec-title em{color:var(--brass-deep)}
-.faq-list{margin-top:3rem;max-width:880px}
+.faq{background:var(--bg)}
+.faq-list{margin-top:3rem;max-width:900px}
 .faq-item{border-bottom:1px solid var(--line)}
-.faq-q{display:flex;justify-content:space-between;align-items:center;gap:1.4rem;padding:1.7rem 0;cursor:pointer}
-.faq-q h3{font-family:var(--display);font-weight:500;font-size:clamp(1.15rem,2vw,1.45rem)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;gap:1.4rem;padding:1.8rem 0;cursor:pointer}
+.faq-q h3{font-family:var(--display);font-weight:400;font-size:clamp(1.15rem,2vw,1.5rem);color:var(--ink)}
 .faq-icon{width:24px;height:24px;flex-shrink:0;position:relative}
-.faq-icon::before,.faq-icon::after{content:"";position:absolute;background:var(--brass-deep);left:50%;top:50%;transition:.4s var(--ease)}
+.faq-icon::before,.faq-icon::after{content:"";position:absolute;background:var(--char);left:50%;top:50%;transition:.4s var(--ease)}
 .faq-icon::before{width:16px;height:1.5px;transform:translate(-50%,-50%)}
 .faq-icon::after{width:1.5px;height:16px;transform:translate(-50%,-50%)}
 .faq-item.active .faq-icon::after{transform:translate(-50%,-50%) scaleY(0)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
-.faq-a p{padding:0 0 1.7rem 0;color:#46525f;max-width:70ch}
+.faq-a p{padding:0 0 1.8rem 0;color:var(--muted);max-width:72ch;font-weight:300}
 
 /* ---------- CONTACT ---------- */
-.contact{background:var(--ink);position:relative;overflow:hidden}
-.contact-bg{position:absolute;inset:0;z-index:0;opacity:.18;background-size:cover;background-position:center}
+.contact{position:relative;overflow:hidden;background:var(--char)}
+.contact-bg{position:absolute;inset:0;z-index:0;opacity:.16;background-size:cover;background-position:center;filter:grayscale(.5);will-change:transform}
 .contact .wrap{position:relative;z-index:1}
+.contact .eyebrow{color:var(--pewter-light)}
+.contact .eyebrow .num{color:var(--paper)}
+.contact .sec-title{color:var(--paper)}
+.contact .sec-title em{color:var(--pewter-light)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,5rem);margin-top:3rem}
-.ci{margin-bottom:1.9rem}
-.ci .lbl{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.26em;font-size:.7rem;color:var(--brass);margin-bottom:.5rem}
-.ci a,.ci p{font-family:var(--display);font-size:clamp(1.2rem,2.2vw,1.6rem);font-weight:500;transition:color .3s var(--ease)}
-.ci a:hover{color:var(--brass)}
-.contact-map{border:1px solid var(--line);overflow:hidden;min-height:340px}
-.contact-map iframe{width:100%;height:100%;min-height:340px;border:0;filter:grayscale(1) invert(.9) contrast(.85)}
+.ci{margin-bottom:2rem}
+.ci .lbl{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.26em;font-size:.7rem;color:var(--pewter-light);margin-bottom:.55rem}
+.ci a,.ci p{font-family:var(--display);font-weight:300;font-size:clamp(1.2rem,2.2vw,1.6rem);color:var(--paper);transition:color .3s var(--ease)}
+.ci a:hover{color:var(--pewter-light)}
+.contact-map{border:1px solid var(--line-light);overflow:hidden;min-height:360px}
+.contact-map iframe{width:100%;height:100%;min-height:360px;border:0;filter:grayscale(1) contrast(.9)}
 
 /* ---------- FOOTER ---------- */
-footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(--line)}
-.foot-in{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
-.foot-brand{display:flex;align-items:center;gap:.8rem}
-.foot-brand img{height:40px;border-radius:50%;border:1px solid var(--line)}
-.foot-brand b{font-family:var(--display);font-weight:600}
+footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid var(--line-light)}
+.foot-in{max-width:1340px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.foot-brand{display:flex;align-items:center;gap:.85rem}
+.foot-brand img{height:48px}
+.foot-brand b{font-family:var(--display);font-weight:400;letter-spacing:.06em;color:var(--paper)}
 .foot-copy{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;color:var(--muted)}
-.foot-copy a{color:var(--brass)}
+.foot-copy a{color:var(--pewter-light)}
+
+/* back to top */
+.totop{position:fixed;right:1.6rem;bottom:1.6rem;z-index:900;width:50px;height:50px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--char);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transition:.4s var(--ease);box-shadow:0 10px 30px -12px rgba(70,67,63,.5)}
+.totop.show{opacity:1;visibility:visible}
+.totop:hover{background:var(--char);color:var(--paper)}
+.totop svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6}
 
 /* ---------- REVEAL ---------- */
 .reveal{opacity:0;transform:translateY(36px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
@@ -359,12 +379,16 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
 
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:980px){
+  .hero{grid-template-columns:1fr}
+  .hero-panel{min-height:64vh}
+  .hero-aside{padding-top:3rem;padding-bottom:3.5rem}
+  .hero-aside .floatmark{top:auto;bottom:0;opacity:.5}
   .about-grid{grid-template-columns:1fr}
   .about-portrait{order:-1}
   .steps{grid-template-columns:repeat(2,1fr)}
   .step:nth-child(2){border-right:none}
   .step{padding-left:0!important}
-  .step:nth-child(odd){padding-right:1.4rem;border-right:1px solid var(--line)}
+  .step:nth-child(odd){padding-right:1.4rem;border-right:1px solid rgba(70,67,63,.2)}
   .step:nth-child(even){padding-left:1.4rem!important}
   .phil-grid{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
@@ -372,8 +396,6 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
 @media(max-width:760px){
   .nav-links,.nav-cta{display:none}
   .burger{display:block}
-  .hero-meta{position:static;margin-top:3rem;padding:0}
-  .scroll-cue{display:none}
 }
 @media(max-width:520px){
   .steps{grid-template-columns:1fr}
@@ -394,7 +416,7 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
     <span style="animation-delay:.05s">Φ</span><span style="animation-delay:.1s">Ι</span><span style="animation-delay:.15s">Ν</span><span style="animation-delay:.2s">Φ</span><span style="animation-delay:.25s">Ι</span><span style="animation-delay:.3s">Ν</span><span style="animation-delay:.35s">Η</span><span style="animation-delay:.4s">Σ</span>
   </div>
   <div class="load-line"></div>
-  <div class="load-sub">Λογιστικό & Φοροτεχνικό Γραφείο</div>
+  <div class="load-sub">Λογιστικό &amp; Φοροτεχνικό Γραφείο</div>
 </div>
 
 <!-- NAV -->
@@ -404,7 +426,7 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
     <span class="bt"><b>ΦΙΝΦΙΝΗΣ</b><small>Πειραιάς</small></span>
   </a>
   <ul class="nav-links">
-    <li><a href="#about">Γραφείο</a></li>
+    <li><a href="#about">Το γραφείο μας</a></li>
     <li><a href="#services">Υπηρεσίες</a></li>
     <li><a href="#process">Συνεργασία</a></li>
     <li><a href="#faq">Ερωτήσεις</a></li>
@@ -414,7 +436,7 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#about">Γραφείο</a>
+  <a href="#about">Το γραφείο μας</a>
   <a href="#services">Υπηρεσίες</a>
   <a href="#process">Συνεργασία</a>
   <a href="#faq">Ερωτήσεις</a>
@@ -425,20 +447,30 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg" id="heroBg"></div>
-  <div class="hero-grain"></div>
-  <div class="wrap">
-    <div class="hero-eyebrow h-anim d1"><span class="ln"></span>Μιχαήλ Θ. Φινφινής · Από το 1992</div>
-    <h1 class="h-anim d2">Πίσω από κάθε σωστή απόφαση, υπάρχει ένας <em>καθαρός αριθμός.</em></h1>
-    <p class="lede h-anim d3">Λογιστική παρακολούθηση και φοροτεχνική καθοδήγηση με μέθοδο, διαφάνεια και ανθρώπινη σχέση. Στον Πειραιά, δίπλα σε επιχειρήσεις και ιδιώτες που θέλουν τα οικονομικά τους σε τάξη.</p>
-    <div class="hero-actions h-anim d4">
-      <a href="#contact" class="btn btn-solid">Κλείστε ραντεβού</a>
-      <a href="#services" class="btn btn-ghost">Οι υπηρεσίες μας</a>
+  <div class="hero-panel">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow h-anim d1"><span class="ln"></span>Μιχαήλ Θ. Φινφινής</div>
+      <h1 class="h-anim d2">Λογιστικό γραφείο για επιχειρήσεις που θέλουν σιγουριά.</h1>
+      <p class="lede h-anim d3">Λογιστικές και φοροτεχνικές υπηρεσίες, προσαρμοσμένες στις ανάγκες της επιχείρησής σας. Επικοινωνήστε μαζί μας και δίνουμε άμεσα λύση στο ζήτημα που σας απασχολεί.</p>
+      <div class="hero-actions h-anim d4">
+        <a href="#contact" class="btn btn-solid">Επικοινωνία</a>
+        <a href="#services" class="btn btn-ghost">Οι υπηρεσίες μας</a>
+      </div>
     </div>
   </div>
-  <div class="hero-meta">
-    <div class="scroll-cue"><span class="dot"></span>Κυλήστε</div>
-    <div class="hero-est">Ακρίβεια. Συνέπεια. Εμπιστοσύνη.</div>
+  <div class="hero-aside">
+    <span class="floatmark" aria-hidden="true">30</span>
+    <div class="hero-aside-inner">
+      <h2 class="h-anim d3">Τριάντα χρόνια δίπλα στην ελληνική επιχείρηση.</h2>
+      <p class="h-anim d4">Με συνεχή παρουσία στον χώρο της λογιστικής και φοροτεχνικής υποστήριξης, μετατρέπουμε την πολυπλοκότητα σε καθαρές, υπεύθυνες αποφάσεις.</p>
+      <div class="hero-pills h-anim d5">
+        <span class="pill">Εμπειρία</span>
+        <span class="pill">Επαγγελματισμός</span>
+        <span class="pill">Υπευθυνότητα</span>
+      </div>
+      <div class="scroll-cue h-anim d5"><span class="dot"></span>Κυλήστε</div>
+    </div>
   </div>
 </section>
 
@@ -453,16 +485,16 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
 <!-- ABOUT -->
 <section class="about sec-pad" id="about">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="num">01</span>Το Γραφείο</div>
-    <h2 class="sec-title reveal d1" style="max-width:18ch">Ένα γραφείο που μετράει <em>σχέσεις,</em> όχι μόνο νούμερα.</h2>
+    <div class="eyebrow reveal"><span class="num">01</span>Το γραφείο μας</div>
+    <h2 class="sec-title reveal d1" style="max-width:18ch">Ένα γραφείο με <em>συνέπεια</em> τριών δεκαετιών.</h2>
     <div class="about-grid">
       <div>
         <div class="reveal d1">
           <div class="about-name">Μιχαήλ Θ. Φινφινής</div>
           <div class="about-role">Λογιστής — Φοροτεχνικός</div>
         </div>
-        <p class="reveal d2">Εδώ και δεκαετίες, το γραφείο μας στον Πειραιά στέκεται δίπλα σε επιχειρήσεις, ελεύθερους επαγγελματίες και ιδιώτες. Δεν αρκούμαστε στο να καταχωρούμε παραστατικά· φροντίζουμε να καταλαβαίνετε κάθε αριθμό που σας αφορά.</p>
-        <p class="reveal d2">Σε ένα φορολογικό περιβάλλον που αλλάζει διαρκώς, ο ρόλος μας είναι να μεταφράζουμε την πολυπλοκότητα σε καθαρές, υπεύθυνες αποφάσεις. Με συνέπεια, διαθεσιμότητα και απόλυτη εχεμύθεια.</p>
+        <p class="reveal d2">Το λογιστικό μας γραφείο έχει συνεχή παρουσία στον χώρο της λογιστικής και φοροτεχνικής υποστήριξης των επιχειρήσεων εδώ και 30 χρόνια. Στοχεύουμε στην πληρέστερη δυνατή παροχή υπηρεσιών, με βαθιά γνώση του ελληνικού επιχειρηματικού περιβάλλοντος.</p>
+        <p class="reveal d2">Σε ένα φορολογικό τοπίο που αλλάζει διαρκώς, ρόλος μας είναι να στεκόμαστε δίπλα στην επιχείρησή σας με σταθερότητα, διαθεσιμότητα και απόλυτη εχεμύθεια — ώστε κάθε απόφαση να στηρίζεται σε καθαρά δεδομένα.</p>
         <blockquote class="pullquote reveal d3">«Η σωστή λογιστική δεν είναι μια υποχρέωση που κλείνεις — είναι μια σχέση εμπιστοσύνης που χτίζεις.»</blockquote>
         <div class="about-stats reveal d3">
           <div class="stat"><div class="n">30+</div><div class="l">Χρόνια Εμπειρίας</div></div>
@@ -472,7 +504,7 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
       </div>
       <div class="about-portrait reveal d2">
         <div class="frame">
-          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1100&q=80" alt="Λεπτομέρεια από το γραφείο — οικονομικά έγγραφα και ανάλυση δεδομένων" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1664575602554-2087b04935a5?auto=format&fit=crop&w=1100&q=80" alt="Επαγγελματικό περιβάλλον γραφείου — οικονομική ανάλυση και συνεργασία" loading="lazy">
         </div>
       </div>
     </div>
@@ -481,7 +513,7 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
 
 <!-- PARALLAX BANNER 1 -->
 <section class="parallax">
-  <div class="parallax-bg" id="px1" style="background-image:url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=2000&q=80')"></div>
+  <div class="parallax-bg" id="px1" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2000&q=80')"></div>
   <div class="wrap">
     <p class="big reveal">Σε κάθε επιχείρηση, τα οικονομικά είναι η γλώσσα.<br><b>Εμείς φροντίζουμε να μιλάτε σωστά.</b></p>
   </div>
@@ -490,16 +522,16 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
 <!-- SERVICES -->
 <section class="services sec-pad" id="services">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="num">02</span>Υπηρεσίες</div>
-    <h2 class="sec-title reveal d1">Όσα χρειάζεστε, <em>κάτω από μία στέγη.</em></h2>
+    <div class="eyebrow reveal"><span class="num">02</span>Οι υπηρεσίες μας</div>
+    <h2 class="sec-title reveal d1">Όσα χρειάζεται η επιχείρησή σας, <em>κάτω από μία στέγη.</em></h2>
     <div class="svc-list">
       <article class="svc">
         <div class="svc-head">
           <span class="svc-num">I</span>
-          <h3 class="svc-name">Λογιστική Παρακολούθηση</h3>
+          <h3 class="svc-name">Λογιστική</h3>
           <span class="svc-toggle" aria-hidden="true"></span>
         </div>
-        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Η λογιστική παρακολούθηση είναι απαραίτητη για τη διασφάλιση της οικονομικής ευημερίας μιας επιχείρησης ή ενός ατόμου. Μέσω της συλλογής, ανάλυσης και καταγραφής των οικονομικών δεδομένων, μπορούμε να παράσχουμε σημαντικές πληροφορίες για την κατάσταση των οικονομικών μας υποθέσεων. Η ακριβής καταγραφή και παρακολούθηση των οικονομικών μας δραστηριοτήτων μπορεί να μας βοηθήσει να κατανοήσουμε καλύτερα την οικονομική μας κατάσταση και να λάβουμε σημαντικές αποφάσεις σχετικά με τη διαχείριση των οικονομικών μας πόρων.</p></div></div>
+        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Τηρούμε και παρακολουθούμε τα βιβλία της επιχείρησής σας με τάξη και συνέπεια, ώστε η εικόνα των οικονομικών σας να είναι πάντα ξεκάθαρη. Κάθε κίνηση καταγράφεται σωστά και κάθε υποχρέωση εκπληρώνεται στην ώρα της — και πάνω από όλα, σας δίνουμε τα στοιχεία που χρειάζεστε για να παίρνετε αποφάσεις με σιγουριά, όχι με υποθέσεις.</p></div></div>
       </article>
       <article class="svc">
         <div class="svc-head">
@@ -507,23 +539,23 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
           <h3 class="svc-name">Συμβουλευτική Φοροτεχνικών Θεμάτων</h3>
           <span class="svc-toggle" aria-hidden="true"></span>
         </div>
-        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Η ενημέρωση και η παρακολούθηση των φορολογικών και ασφαλιστικών ζητημάτων είναι ζωτικής σημασίας για κάθε επιχείρηση. Οι συνεχείς αλλαγές στο φορολογικό και ασφαλιστικό πλαίσιο δημιουργούν μια δυναμική περιβάλλοντος, όπου οι επιχειρήσεις πρέπει να είναι ετοιμότερες από ποτέ να λαμβάνουν τις κατάλληλες αποφάσεις. Η επαγγελματική βοήθεια από έμπειρους λογιστές και φοροτεχνικούς είναι απαραίτητη για να διασφαλιστεί η σωστή και αποδοτική διαχείριση των οικονομικών θεμάτων.</p></div></div>
+        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Το φορολογικό και ασφαλιστικό πλαίσιο αλλάζει συνεχώς, και μαζί του οι κίνδυνοι και οι ευκαιρίες για κάθε επιχείρηση. Παρακολουθούμε τις εξελίξεις πριν σας αφορούν και σας ενημερώνουμε έγκαιρα, μεταφράζοντας τη νομοθεσία σε πρακτικές, υπεύθυνες κινήσεις που προστατεύουν την επιχείρησή σας και βελτιστοποιούν τη φορολογική της θέση.</p></div></div>
       </article>
       <article class="svc">
         <div class="svc-head">
           <span class="svc-num">III</span>
-          <h3 class="svc-name">Έναρξη Επιχείρησης — Μετατροπές</h3>
+          <h3 class="svc-name">Έναρξη Επιχείρησης - Μετατροπές</h3>
           <span class="svc-toggle" aria-hidden="true"></span>
         </div>
-        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Η εταιρεία μας ειδικεύεται στη σύσταση ατομικών επιχειρήσεων καθώς και σε κάθε μορφή προσωπικής ή κεφαλαιουχικής εταιρίας, όπως Ο.Ε, Ε.Ε, Ε.Π.Ε, και Α.Ε. Με γνώση των νομικών και φορολογικών θεμάτων, είμαστε στη διάθεσή σας για να σας βοηθήσουμε να επιλέξετε το κατάλληλο επιχειρηματικό πλαίσιο που θα σας βοηθήσει να επιτύχετε τους στόχους σας.</p></div></div>
+        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Από την ατομική επιχείρηση μέχρι κάθε μορφή προσωπικής ή κεφαλαιουχικής εταιρίας — Ο.Ε., Ε.Ε., Ε.Π.Ε. και Α.Ε. — αναλαμβάνουμε ολόκληρη τη διαδικασία σύστασης ή μετατροπής. Σας βοηθάμε να επιλέξετε τη νομική μορφή που ταιριάζει πραγματικά στους στόχους σας και χειριζόμαστε όλα τα νομικά και φορολογικά βήματα, ώστε να ξεκινήσετε χωρίς εμπόδια.</p></div></div>
       </article>
       <article class="svc">
         <div class="svc-head">
           <span class="svc-num">IV</span>
-          <h3 class="svc-name">Υποστήριξη Μισθοδοσίας & Ανθρωπίνου Δυναμικού</h3>
+          <h3 class="svc-name">Υποστήριξη Μισθοδοσίας &amp; Ανθρωπίνου Δυναμικού</h3>
           <span class="svc-toggle" aria-hidden="true"></span>
         </div>
-        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Στην επιχείρηση, το ανθρώπινο δυναμικό αποτελεί τον πιο πολύτιμο πόρο και επιδρά άμεσα στην απόδοση και την επιτυχία της επιχείρησης. Παράλληλα, το μισθολογικό κόστος αποτελεί σημαντικό μέρος των δαπανών μιας επιχείρησης και μπορεί να επηρεάσει την κερδοφορία της. Για αυτόν το λόγο, είναι σημαντικό να διαχειρίζεστε το ανθρώπινο δυναμικό σας με στρατηγικό τρόπο, βελτιώνοντας τις δεξιότητες και την απόδοσή τους, ενώ ταυτόχρονα προσέχετε το κόστος των αμοιβών και των ασφαλίσεων ώστε να διατηρείτε την οικονομική σταθερότητα της επιχείρησής σας.</p></div></div>
+        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Το ανθρώπινο δυναμικό είναι ο πιο πολύτιμος πόρος της επιχείρησης, αλλά και ένα από τα μεγαλύτερα κόστη της. Αναλαμβάνουμε τη μισθοδοσία, τις ασφαλιστικές υποχρεώσεις και την εργατική παρακολούθηση με ακρίβεια, και σας στηρίζουμε στη στρατηγική διαχείριση του προσωπικού — ώστε να κρατάτε ισορροπία ανάμεσα στην απόδοση των ανθρώπων σας και τη σταθερότητα των οικονομικών σας.</p></div></div>
       </article>
     </div>
   </div>
@@ -538,7 +570,7 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
       <div class="step reveal d1">
         <div class="step-n">α′</div>
         <h3>Γνωριμία</h3>
-        <p>Ακούμε την περίπτωσή σας — επιχείρηση ή ιδιώτη — και χαρτογραφούμε τις πραγματικές σας ανάγκες χωρίς βιασύνη.</p>
+        <p>Ακούμε την περίπτωση της επιχείρησής σας και χαρτογραφούμε τις πραγματικές σας ανάγκες χωρίς βιασύνη.</p>
       </div>
       <div class="step reveal d2">
         <div class="step-n">β′</div>
@@ -561,7 +593,7 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
 
 <!-- PARALLAX BANNER 2 -->
 <section class="parallax">
-  <div class="parallax-bg" id="px2" style="background-image:url('https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=2000&q=80')"></div>
+  <div class="parallax-bg" id="px2" style="background-image:url('https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=2000&q=80')"></div>
   <div class="wrap">
     <p class="big reveal">Το φορολογικό τοπίο αλλάζει.<br><b>Η σχέση σας με τον λογιστή σας δεν πρέπει.</b></p>
   </div>
@@ -575,18 +607,18 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
     <div class="phil-grid">
       <div class="phil-card reveal d1">
         <div class="phil-icon"><svg viewBox="0 0 48 48"><path d="M24 4v40M8 14l16-8 16 8M8 14v8M40 14v8M6 22h12l-6 12-6-12zM30 22h12l-6 12-6-12z"/></svg></div>
-        <h3>Ακρίβεια</h3>
-        <p>Κάθε εγγραφή, κάθε δήλωση, κάθε προθεσμία αντιμετωπίζεται με σχολαστικότητα. Στους αριθμούς δεν χωρούν προχειρότητες.</p>
+        <h3>Εμπειρία</h3>
+        <p>Τριάντα χρόνια δίπλα σε επιχειρήσεις μάς έμαθαν να αναγνωρίζουμε το ουσιώδες και να προλαμβάνουμε τα προβλήματα πριν εμφανιστούν.</p>
       </div>
       <div class="phil-card reveal d2">
         <div class="phil-icon"><svg viewBox="0 0 48 48"><path d="M24 6l16 6v10c0 10-7 16-16 20-9-4-16-10-16-20V12l16-6z"/><path d="M17 24l5 5 9-10"/></svg></div>
-        <h3>Εμπιστοσύνη</h3>
-        <p>Διαχειριζόμαστε ευαίσθητα οικονομικά δεδομένα με απόλυτη εχεμύθεια. Η σχέση μας χτίζεται στη διαφάνεια.</p>
+        <h3>Επαγγελματισμός</h3>
+        <p>Κάθε εγγραφή, κάθε δήλωση, κάθε προθεσμία αντιμετωπίζεται με σχολαστικότητα. Στους αριθμούς δεν χωρούν προχειρότητες.</p>
       </div>
       <div class="phil-card reveal d3">
         <div class="phil-icon"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 14v10l7 5"/></svg></div>
-        <h3>Συνέπεια</h3>
-        <p>Είμαστε εκεί όταν μας χρειάζεστε — με σταθερή επικοινωνία και ενημέρωση που προλαμβάνει αντί να διορθώνει.</p>
+        <h3>Υπευθυνότητα</h3>
+        <p>Διαχειριζόμαστε ευαίσθητα οικονομικά δεδομένα με απόλυτη εχεμύθεια και είμαστε εκεί όταν μας χρειάζεστε, με σταθερή επικοινωνία.</p>
       </div>
     </div>
   </div>
@@ -601,23 +633,23 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
       <div class="rev-track" id="revTrack">
         <article class="rev-card">
           <div class="rev-stars">★★★★★</div>
-          <p class="rev-text">Συνεργαζόμαστε χρόνια για την επιχείρησή μας. Πάντα προετοιμασμένοι, πάντα διαθέσιμοι. Νιώθω ότι τα οικονομικά μου είναι σε καλά χέρια.</p>
+          <p class="rev-text">Συνεργαζόμαστε χρόνια για την επιχείρησή μας. Πάντα προετοιμασμένοι, πάντα διαθέσιμοι. Νιώθω ότι τα οικονομικά της εταιρείας είναι σε καλά χέρια.</p>
           <div class="rev-author">Γιώργος Π. <span>Ιδιοκτήτης επιχείρησης εστίασης</span></div>
         </article>
         <article class="rev-card">
           <div class="rev-stars">★★★★★</div>
-          <p class="rev-text">Με βοήθησαν στην έναρξη της ατομικής μου επιχείρησης από το μηδέν. Εξήγησαν το κάθε βήμα με υπομονή και καθαρές απαντήσεις.</p>
-          <div class="rev-author">Ελένη Κ. <span>Ελεύθερη επαγγελματίας</span></div>
+          <p class="rev-text">Μας βοήθησαν στην έναρξη της εταιρείας από το μηδέν. Εξήγησαν το κάθε βήμα με υπομονή και καθαρές απαντήσεις.</p>
+          <div class="rev-author">Ελένη Κ. <span>Συνιδρύτρια εμπορικής εταιρείας</span></div>
         </article>
         <article class="rev-card">
           <div class="rev-stars">★★★★★</div>
-          <p class="rev-text">Το πιο σημαντικό για μένα είναι η συνέπεια. Δεν χρειάζεται να κυνηγάω για απαντήσεις — με ενημερώνουν πριν προλάβω να ρωτήσω.</p>
+          <p class="rev-text">Το πιο σημαντικό για εμάς είναι η συνέπεια. Δεν χρειάζεται να κυνηγάμε για απαντήσεις — μας ενημερώνουν πριν προλάβουμε να ρωτήσουμε.</p>
           <div class="rev-author">Δημήτρης Α. <span>Διαχειριστής Ε.Π.Ε.</span></div>
         </article>
         <article class="rev-card">
           <div class="rev-stars">★★★★★</div>
-          <p class="rev-text">Φοροτεχνική καθοδήγηση που πραγματικά καταλαβαίνω. Μετέτρεψαν κάτι αγχωτικό σε μια απλή, ξεκάθαρη διαδικασία.</p>
-          <div class="rev-author">Μαρία Σ. <span>Ιδιώτης</span></div>
+          <p class="rev-text">Φοροτεχνική καθοδήγηση που πραγματικά καταλαβαίνουμε. Μετέτρεψαν κάτι αγχωτικό σε μια απλή, ξεκάθαρη διαδικασία για την εταιρεία μας.</p>
+          <div class="rev-author">Μαρία Σ. <span>Οικονομική διευθύντρια Α.Ε.</span></div>
         </article>
       </div>
     </div>
@@ -635,20 +667,20 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
     <h2 class="sec-title reveal d1">Καλό είναι να <em>ξέρετε.</em></h2>
     <div class="faq-list">
       <div class="faq-item reveal d1">
-        <div class="faq-q"><h3>Αναλαμβάνετε και ιδιώτες ή μόνο επιχειρήσεις;</h3><span class="faq-icon" aria-hidden="true"></span></div>
-        <div class="faq-a"><p>Αναλαμβάνουμε τόσο επιχειρήσεις κάθε νομικής μορφής όσο και ιδιώτες — από φορολογικές δηλώσεις μέχρι ολοκληρωμένη οικονομική παρακολούθηση. Η προσέγγισή μας προσαρμόζεται στις δικές σας ανάγκες.</p></div>
+        <div class="faq-q"><h3>Σε τι είδους επιχειρήσεις απευθύνεστε;</h3><span class="faq-icon" aria-hidden="true"></span></div>
+        <div class="faq-a"><p>Υποστηρίζουμε επιχειρήσεις κάθε νομικής μορφής — ατομικές, Ο.Ε., Ε.Ε., Ε.Π.Ε. και Α.Ε. — σε όλο το φάσμα της λογιστικής και φοροτεχνικής τους λειτουργίας. Η προσέγγισή μας προσαρμόζεται στο μέγεθος και τον κλάδο της δικής σας επιχείρησης.</p></div>
       </div>
       <div class="faq-item reveal d1">
         <div class="faq-q"><h3>Θέλω να ξεκινήσω επιχείρηση. Από πού αρχίζω;</h3><span class="faq-icon" aria-hidden="true"></span></div>
         <div class="faq-a"><p>Από μια απλή κουβέντα. Συζητάμε τους στόχους σας και σας καθοδηγούμε στην επιλογή της κατάλληλης μορφής — ατομική, Ο.Ε., Ε.Ε., Ε.Π.Ε. ή Α.Ε. — αναλαμβάνοντας όλη τη διαδικασία σύστασης.</p></div>
       </div>
       <div class="faq-item reveal d1">
-        <div class="faq-q"><h3>Πόσο συχνά θα έχω ενημέρωση για τα οικονομικά μου;</h3><span class="faq-icon" aria-hidden="true"></span></div>
+        <div class="faq-q"><h3>Πόσο συχνά θα έχω ενημέρωση για τα οικονομικά της επιχείρησης;</h3><span class="faq-icon" aria-hidden="true"></span></div>
         <div class="faq-a"><p>Πιστεύουμε στην προληπτική επικοινωνία. Σας ενημερώνουμε για υποχρεώσεις, προθεσμίες και αλλαγές πριν αυτές γίνουν πρόβλημα, και είμαστε διαθέσιμοι όποτε μας χρειαστείτε.</p></div>
       </div>
       <div class="faq-item reveal d1">
         <div class="faq-q"><h3>Μπορώ να αλλάξω λογιστή μέσα στη χρονιά;</h3><span class="faq-icon" aria-hidden="true"></span></div>
-        <div class="faq-a"><p>Ναι. Αναλαμβάνουμε ομαλά τη μεταφορά των στοιχείων σας και φροντίζουμε ώστε η μετάβαση να γίνει χωρίς κενά και χωρίς άγχος για εσάς.</p></div>
+        <div class="faq-a"><p>Ναι. Αναλαμβάνουμε ομαλά τη μεταφορά των στοιχείων της επιχείρησής σας και φροντίζουμε ώστε η μετάβαση να γίνει χωρίς κενά και χωρίς άγχος για εσάς.</p></div>
       </div>
     </div>
   </div>
@@ -656,29 +688,26 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
 
 <!-- CONTACT -->
 <section class="contact sec-pad" id="contact">
-  <div class="contact-bg" id="contactBg" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80')"></div>
+  <div class="contact-bg" id="contactBg" style="background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2000&q=80')"></div>
   <div class="wrap">
-    <div class="eyebrow reveal" style="color:var(--brass)"><span class="num">07</span>Επικοινωνία</div>
-    <h2 class="sec-title reveal d1">Ας μιλήσουμε για τα <em>δικά σας</em> νούμερα.</h2>
+    <div class="eyebrow reveal"><span class="num">07</span>Επικοινωνία</div>
+    <h2 class="sec-title reveal d1">Ας μιλήσουμε για τα <em>νούμερα</em> της επιχείρησής σας.</h2>
     <div class="contact-grid">
       <div>
         <div class="ci reveal d1">
-          <div class="lbl">Διεύθυνση</div>
-          <p>Αντιπλοιάρχου Βλαχάκου & Μεθώνης 36<br>Πειραιάς, 2ος όροφος</p>
+          <div class="lbl">Τοποθεσία</div>
+          <p>Αντιπλοιάρχου Βλαχάκου &amp; Μεθώνης 36<br>Πειραιάς, 2ος όροφος</p>
         </div>
         <div class="ci reveal d2">
-          <div class="lbl">Σταθερό</div>
-          <a href="tel:2104200697">210 420 0697</a>
-        </div>
-        <div class="ci reveal d2">
-          <div class="lbl">Κινητό</div>
+          <div class="lbl">Πληροφορίες</div>
+          <a href="tel:2104200697">210 420 0697</a><br>
           <a href="tel:6936582690">693 658 2690</a>
         </div>
         <div class="ci reveal d3">
           <div class="lbl">Email</div>
           <a href="mailto:office.finfinis@gmail.com">office.finfinis@gmail.com</a>
         </div>
-        <div class="hero-actions reveal d3" style="margin-top:2rem">
+        <div class="hero-actions reveal d3" style="margin-top:1.4rem">
           <a href="mailto:office.finfinis@gmail.com" class="btn btn-solid">Στείλτε μήνυμα</a>
         </div>
       </div>
@@ -703,6 +732,8 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
   </div>
 </footer>
 
+<button class="totop" id="toTop" aria-label="Επιστροφή στην κορυφή"><svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg></button>
+
 <script>
 (function(){
   "use strict";
@@ -717,11 +748,15 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
     }, 1600);
   });
 
-  // Nav scroll state
-  const nav = $('#nav');
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);
+  // Nav scroll state + back to top
+  const nav = $('#nav'), toTop = $('#toTop');
+  const onScroll = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+    toTop.classList.toggle('show', window.scrollY > 600);
+  };
   onScroll();
   window.addEventListener('scroll', onScroll, {passive:true});
+  toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
 
   // Mobile menu
   const burger = $('#burger'), menu = $('#mobileMenu');
@@ -781,7 +816,7 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!reduce){
     const layers = [
-      {el:$('#heroBg'), s:0.35},
+      {el:$('#heroBg'), s:0.3},
       {el:$('#px1'), s:0.28},
       {el:$('#px2'), s:0.28},
       {el:$('#contactBg'), s:0.2}
@@ -792,7 +827,7 @@ footer{background:var(--ink-2);padding:3rem var(--pad);border-top:1px solid var(
         const r = l.el.parentElement.getBoundingClientRect();
         if(r.bottom > 0 && r.top < window.innerHeight){
           const off = (r.top - window.innerHeight/2) * -l.s;
-          l.el.style.transform = `translate3d(0, ${off}px, 0) scale(1.15)`;
+          l.el.style.transform = `translate3d(0, ${off}px, 0) scale(1.16)`;
         }
       });
       ticking = false;
