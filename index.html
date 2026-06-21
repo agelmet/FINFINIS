@@ -163,10 +163,6 @@ nav.scrolled .nav-brand img{height:50px}
   font-family:var(--display);font-weight:300;color:var(--paper);
   font-size:clamp(2.6rem,5.2vw,5rem);line-height:1.04;letter-spacing:-.005em;
 }
-.hero p.lede{
-  margin-top:1.8rem;max-width:42ch;font-size:clamp(1rem,1.3vw,1.16rem);font-weight:300;
-  color:rgba(246,245,242,.9);
-}
 .hero-actions{display:flex;gap:1rem;margin-top:2.8rem;flex-wrap:wrap}
 .btn{
   font-family:var(--display);font-weight:400;letter-spacing:.02em;font-size:1rem;
@@ -181,12 +177,7 @@ nav.scrolled .nav-brand img{height:50px}
   position:relative;display:flex;flex-direction:column;justify-content:flex-end;
   padding:clamp(2rem,5vw,4rem);background:var(--bg);
 }
-.hero-aside .floatmark{
-  position:absolute;top:12vh;right:clamp(2rem,5vw,4rem);font-family:var(--display);
-  font-weight:300;font-size:clamp(4rem,11vw,9rem);color:rgba(91,87,81,.07);line-height:.8;letter-spacing:-.02em;user-select:none;
-}
 .hero-aside-inner{position:relative;z-index:2}
-.hero-aside h2{font-family:var(--display);font-weight:300;font-size:clamp(1.4rem,2.4vw,2.1rem);color:var(--green);line-height:1.2;margin-bottom:1.2rem}
 .aside-years{display:flex;align-items:baseline;gap:.7rem;margin-bottom:.9rem;font-family:var(--display)}
 .aside-years{font-weight:300;font-size:clamp(2.4rem,4vw,3.4rem);color:var(--green);line-height:1}
 .aside-years em{font-style:normal;font-size:.9rem;font-family:var(--narrow);text-transform:uppercase;letter-spacing:.22em;color:var(--blue)}
@@ -237,11 +228,6 @@ nav.scrolled .nav-brand img{height:50px}
 .about-name{font-family:var(--display);font-weight:500;font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:.3rem;color:var(--green)}
 .about-role{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.26em;font-size:.78rem;color:var(--pewter);margin-bottom:1.9rem}
 .about p{margin-bottom:1.1rem;color:var(--muted);max-width:54ch}
-.pullquote{
-  font-family:var(--display);font-weight:300;
-  font-size:clamp(1.3rem,2.4vw,1.95rem);line-height:1.32;color:var(--blue);
-  border-left:2px solid var(--green);padding-left:1.6rem;margin:2.1rem 0;
-}
 .about-stats{display:flex;gap:2.8rem;margin-top:2.3rem;flex-wrap:wrap}
 .stat .n{font-family:var(--display);font-weight:300;font-size:2.6rem;color:var(--green);line-height:1}
 .stat .l{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.18em;font-size:.68rem;color:var(--pewter);margin-top:.4rem}
@@ -295,7 +281,6 @@ nav.scrolled .nav-brand img{height:50px}
 .step-n{font-family:var(--display);font-weight:400;font-size:1.5rem;color:var(--green);margin-bottom:1.1rem}
 .step h3{font-family:var(--display);font-weight:500;font-size:1.35rem;margin-top:.4rem;margin-bottom:.7rem;color:var(--green)}
 .step p{font-size:.95rem;color:var(--char);font-weight:300}
-.process-quote{font-family:var(--display);font-weight:300;font-size:clamp(1.3rem,2.6vw,2rem);line-height:1.3;color:var(--green);border-left:2px solid var(--blue);padding-left:1.6rem;margin-top:3.4rem;max-width:34ch}
 
 /* ---------- PHILOSOPHY ---------- */
 .philosophy{background:var(--bg)}
@@ -455,7 +440,6 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
     <div class="hero-content">
       <div class="hero-eyebrow h-anim d1"><span class="ln"></span>Μιχάλης Φινφίνης & Συνεργάτες</div>
       <h1 class="h-anim d2">Τριάντα χρόνια δίπλα στο επιχειρείν και τον επαγγελματία.</h1>
-      <p class="lede h-anim d3">Ο Μιχάλης Φινφίνης και οι συνεργάτες του υποστηρίζουν επιχειρήσεις και επαγγελματίες εδώ και τρεις δεκαετίες, προσφέροντας εξειδικευμένες λογιστικές, φοροτεχνικές και συμβουλευτικές υπηρεσίες. Σε ένα διαρκώς μεταβαλλόμενο φορολογικό περιβάλλον, λειτουργούμε ως σταθερός συνεργάτης — με υπεύθυνη ενημέρωση, άμεση εξυπηρέτηση και απόλυτη εχεμύθεια.</p>
       <div class="hero-actions h-anim d4">
         <a href="#contact" class="btn btn-solid">Επικοινωνία</a>
         <a href="#services" class="btn btn-ghost">Οι υπηρεσίες μας</a>
@@ -463,11 +447,9 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
     </div>
   </div>
   <div class="hero-aside">
-    <span class="floatmark" aria-hidden="true">30</span>
     <div class="hero-aside-inner">
       <span class="aside-years h-anim d2">30 <em>χρόνια εμπειρίας</em></span>
-      <h2 class="h-anim d3">Ένα γραφείο με παρουσία τριών δεκαετιών.</h2>
-      <blockquote class="aside-quote h-anim d4">Τα οικονομικά δεδομένα αποτελούν τη βάση κάθε επιχειρηματικής απόφασης. Εμείς φροντίζουμε να έχετε πάντα καθαρή εικόνα και αξιόπιστη καθοδήγηση.</blockquote>
+      <blockquote class="aside-quote h-anim d4">Τα οικονομικά δεδομένα / στοιχεία αποτελούν τη βάση κάθε επιχειρηματικής απόφασης.<br>Εμείς φροντίζουμε να έχετε πάντα καθαρή εικόνα και αξιόπιστη καθοδήγηση.</blockquote>
       <div class="hero-pills h-anim d5">
         <span class="pill">Εμπειρία</span>
         <span class="pill">Επαγγελματισμός</span>
@@ -497,7 +479,6 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
         </div>
         <p class="reveal d2">Ο Μιχάλης Φινφίνης και οι συνεργάτες του υποστηρίζουν επιχειρήσεις και επαγγελματίες εδώ και τρεις δεκαετίες, προσφέροντας εξειδικευμένες λογιστικές, φοροτεχνικές και συμβουλευτικές υπηρεσίες. Η εμπειρία μας, σε συνδυασμό με τη διαρκή παρακολούθηση των εξελίξεων, διασφαλίζει έγκυρη καθοδήγηση και ουσιαστική υποστήριξη σε κάθε στάδιο της επιχειρηματικής δραστηριότητας.</p>
         <p class="reveal d2">Σε ένα διαρκώς μεταβαλλόμενο φορολογικό περιβάλλον, λειτουργούμε ως σταθερός συνεργάτης, παρέχοντας υπεύθυνη ενημέρωση, άμεση εξυπηρέτηση και απόλυτη εχεμύθεια, ώστε να λαμβάνετε αποφάσεις με σιγουριά και προοπτική.</p>
-        <blockquote class="pullquote reveal d3">Τα οικονομικά δεδομένα / στοιχεία αποτελούν τη βάση κάθε επιχειρηματικής απόφασης.<br>Εμείς φροντίζουμε να έχετε πάντα καθαρή εικόνα και αξιόπιστη καθοδήγηση.</blockquote>
         <div class="about-stats reveal d3">
           <div class="stat"><div class="n">30+</div><div class="l">Χρόνια Εμπειρίας</div></div>
           <div class="stat"><div class="n">100%</div><div class="l">Αξιοπιστία</div></div>
@@ -523,7 +504,7 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
 <section class="services sec-pad" id="services">
   <div class="wrap">
     <div class="eyebrow reveal"><span class="num">02</span>Οι υπηρεσίες μας</div>
-    <h2 class="sec-title reveal d1">Όσα χρειάζεται η επιχείρησήexport σας, <em>κάτω από μία στέγη.</em></h2>
+    <h2 class="sec-title reveal d1">Όσα χρειάζεται η επιχείρησή σας, <em>κάτω από μία στέγη.</em></h2>
     <div class="svc-list">
       <article class="svc">
         <div class="svc-head">
@@ -547,7 +528,7 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
           <h3 class="svc-name">Έναρξη Επιχείρησης - Μετατροπές</h3>
           <span class="svc-toggle" aria-hidden="true"></span>
         </div>
-        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Από την ίδρυση μιας ατομικής επιχείρησης έως τη σύσταση ή μετατροπή προσωπικών και κεφαλαιουχικών εταιρειών, παρέχουμε ολοκληρωμένη υποστήριξη σε κάθε στάδιο της διαδικασίας. Σας καθοδηγούμε στην επιλογή της κατάλληλης εταιρικής μορφής and αναλαμβάνουμε όλες τις απαραίτητες ενέργειες, ώστε η επιχειρηματική σας δραστηριότητα να ξεκινήσει ή να εξελιχθεί με ασφάλεια, ταχύτητα και πλήρη συμμόρφωση με το ισχύον θεσμικό πλαίσιο.</p></div></div>
+        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Από την ίδρυση μιας ατομικής επιχείρησης έως τη σύσταση ή μετατροπή προσωπικών και κεφαλαιουχικών εταιρειών, παρέχουμε ολοκληρωμένη υποστήριξη σε κάθε στάδιο της διαδικασίας. Σας καθοδηγούμε στην επιλογή της κατάλληλης εταιρικής μορφής και αναλαμβάνουμε όλες τις απαραίτητες ενέργειες, ώστε η επιχειρηματική σας δραστηριότητα να ξεκινήσει ή να εξελιχθεί με ασφάλεια, ταχύτητα και πλήρη συμμόρφωση με το ισχύον θεσμικό πλαίσιο.</p></div></div>
       </article>
       <article class="svc">
         <div class="svc-head">
@@ -606,7 +587,7 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
       <div class="phil-card reveal d2">
         <div class="phil-icon"><svg viewBox="0 0 48 48"><path d="M24 6l16 6v10c0 10-7 16-16 20-9-4-16-10-16-20V12l16-6z"/><path d="M17 24l5 5 9-10"/></svg></div>
         <h3>Επαγγελματισμός</h3>
-        <p>Κάθε εγγραφή, δήλωση και υποχρέωση αντιμετωπίζεται με ακρίβεια, συνέπεια και απόλυτο επαγγελματισμό. Στους αριθμούς δεν υπάρχει χώρος για αστοχίες. Στη δουλειά μας, η προχειρότητα δεν έχει θέση.</p>
+        <p>Κάθε εγγραφή, δήλωση and υποχρέωση αντιμετωπίζεται με ακρίβεια, συνέπεια και απόλυτο επαγγελματισμό. Στους αριθμούς δεν υπάρχει χώρος για αστοχίες. Στη δουλειά μας, η προχειρότητα δεν έχει θέση.</p>
       </div>
       <div class="phil-card reveal d3">
         <div class="phil-icon"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 14v10l7 5"/></svg></div>
