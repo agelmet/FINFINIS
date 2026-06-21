@@ -21,6 +21,10 @@
   --pewter:#8d8a84;      /* muted accent */
   --pewter-light:#cfcbc4;
   --muted:#86827b;
+  --green:#1a4a3e;       /* dark green — headings on light, brand-aligned */
+  --green-2:#236153;     /* dark green softer */
+  --blue:#143a52;        /* dark blue — headings accent */
+  --green-paper:#a4ccba; /* light green for headings on dark */
   --line:rgba(91,87,81,.22);
   --line-light:rgba(246,245,242,.28);
   --display:'Jost',system-ui,sans-serif;
@@ -93,8 +97,8 @@ nav.scrolled{
   box-shadow:0 1px 0 var(--line);
 }
 .nav-brand{display:flex;align-items:center;gap:.85rem}
-.nav-brand img{height:54px;width:auto;transition:height .5s var(--ease)}
-nav.scrolled .nav-brand img{height:46px}
+.nav-brand img{height:62px;width:auto;border-radius:8px;box-shadow:0 4px 16px -8px rgba(26,74,62,.45);transition:height .5s var(--ease)}
+nav.scrolled .nav-brand img{height:50px}
 .nav-links{display:flex;align-items:center;gap:2.4rem;list-style:none}
 .nav-links a{
   font-family:var(--display);font-weight:400;letter-spacing:.02em;
@@ -144,10 +148,10 @@ nav.scrolled .nav-brand img{height:46px}
 }
 .hero-bg{
   position:absolute;inset:0;z-index:0;
-  background:linear-gradient(180deg,rgba(91,87,81,.42),rgba(91,87,81,.58)),
+  background:linear-gradient(180deg,rgba(20,69,47,.42),rgba(15,47,77,.55)),
   url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80');
   background-size:cover;background-position:center;
-  filter:grayscale(.6);will-change:transform;
+  will-change:transform;
 }
 .hero-content{position:relative;z-index:2;padding:clamp(2rem,6vw,5rem);padding-top:14vh;max-width:640px}
 .hero-eyebrow{
@@ -182,7 +186,11 @@ nav.scrolled .nav-brand img{height:46px}
   font-weight:300;font-size:clamp(4rem,11vw,9rem);color:rgba(91,87,81,.07);line-height:.8;letter-spacing:-.02em;user-select:none;
 }
 .hero-aside-inner{position:relative;z-index:2}
-.hero-aside h2{font-family:var(--display);font-weight:300;font-size:clamp(1.4rem,2.4vw,2.1rem);color:var(--ink);line-height:1.2;margin-bottom:1.2rem}
+.hero-aside h2{font-family:var(--display);font-weight:300;font-size:clamp(1.4rem,2.4vw,2.1rem);color:var(--green);line-height:1.2;margin-bottom:1.2rem}
+.aside-years{display:flex;align-items:baseline;gap:.7rem;margin-bottom:.9rem;font-family:var(--display)}
+.aside-years{font-weight:300;font-size:clamp(2.4rem,4vw,3.4rem);color:var(--green);line-height:1}
+.aside-years em{font-style:normal;font-size:.9rem;font-family:var(--narrow);text-transform:uppercase;letter-spacing:.22em;color:var(--blue)}
+.aside-quote{font-family:var(--display);font-weight:300;font-size:clamp(1.02rem,1.4vw,1.18rem);line-height:1.4;color:var(--ink);border-left:2px solid var(--green);padding-left:1.2rem;margin-bottom:2rem;max-width:40ch}
 .hero-aside p{color:var(--muted);max-width:38ch;margin-bottom:2rem}
 .hero-pills{display:flex;flex-wrap:wrap;gap:.7rem}
 .pill{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.2em;font-size:.7rem;padding:.55rem 1.1rem;border:1px solid var(--line);border-radius:30px;color:var(--ink)}
@@ -214,28 +222,28 @@ nav.scrolled .nav-brand img{height:46px}
   font-family:var(--narrow);text-transform:uppercase;letter-spacing:.36em;font-size:.74rem;
   color:var(--pewter);display:flex;align-items:center;gap:.9rem;margin-bottom:1.5rem;
 }
-.eyebrow .num{font-family:var(--display);font-weight:400;font-size:1rem;color:var(--ink)}
-.sec-title{font-family:var(--display);font-weight:300;font-size:clamp(2rem,4.6vw,3.7rem);line-height:1.08;letter-spacing:-.01em;color:var(--ink)}
-.sec-title em{font-style:normal;color:var(--pewter)}
+.eyebrow .num{font-family:var(--display);font-weight:400;font-size:1rem;color:var(--green)}
+.sec-title{font-family:var(--display);font-weight:300;font-size:clamp(2rem,4.6vw,3.7rem);line-height:1.08;letter-spacing:-.01em;color:var(--green)}
+.sec-title em{font-style:normal;color:var(--blue)}
 
 /* ---------- ABOUT ---------- */
 .about{background:var(--bg)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,6rem);align-items:center;margin-top:3.2rem}
 .about-portrait{position:relative}
 .about-portrait .frame{position:relative;overflow:hidden;background:var(--char)}
-.about-portrait img{filter:grayscale(.9) contrast(1.02);transition:transform 1.2s var(--ease),filter 1.2s var(--ease);width:100%;height:100%;object-fit:cover;min-height:460px}
-.about-portrait:hover img{transform:scale(1.05);filter:grayscale(.5)}
-.about-portrait::after{content:"";position:absolute;top:20px;left:20px;right:-20px;bottom:-20px;border:1px solid var(--pewter);z-index:-1}
-.about-name{font-family:var(--display);font-weight:500;font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:.3rem;color:var(--ink)}
+.about-portrait img{transition:transform 1.2s var(--ease),filter 1.2s var(--ease);width:100%;height:100%;object-fit:cover;min-height:460px}
+.about-portrait:hover img{transform:scale(1.05)}
+.about-portrait::after{content:"";position:absolute;top:20px;left:20px;right:-20px;bottom:-20px;border:1px solid var(--green);z-index:-1}
+.about-name{font-family:var(--display);font-weight:500;font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:.3rem;color:var(--green)}
 .about-role{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.26em;font-size:.78rem;color:var(--pewter);margin-bottom:1.9rem}
 .about p{margin-bottom:1.1rem;color:var(--muted);max-width:54ch}
 .pullquote{
   font-family:var(--display);font-weight:300;
-  font-size:clamp(1.3rem,2.4vw,1.95rem);line-height:1.32;color:var(--ink);
-  border-left:2px solid var(--pewter);padding-left:1.6rem;margin:2.1rem 0;
+  font-size:clamp(1.3rem,2.4vw,1.95rem);line-height:1.32;color:var(--blue);
+  border-left:2px solid var(--green);padding-left:1.6rem;margin:2.1rem 0;
 }
 .about-stats{display:flex;gap:2.8rem;margin-top:2.3rem;flex-wrap:wrap}
-.stat .n{font-family:var(--display);font-weight:300;font-size:2.6rem;color:var(--ink);line-height:1}
+.stat .n{font-family:var(--display);font-weight:300;font-size:2.6rem;color:var(--green);line-height:1}
 .stat .l{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.18em;font-size:.68rem;color:var(--pewter);margin-top:.4rem}
 
 /* ---------- PARALLAX BANNER ---------- */
@@ -243,8 +251,8 @@ nav.scrolled .nav-brand img{height:46px}
   min-height:64vh;display:flex;align-items:center;justify-content:center;
   position:relative;overflow:hidden;text-align:center;
 }
-.parallax-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;filter:grayscale(.7);will-change:transform}
-.parallax::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(rgba(70,67,63,.72),rgba(70,67,63,.8))}
+.parallax-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;will-change:transform}
+.parallax::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(rgba(20,69,47,.72),rgba(15,47,77,.8))}
 .parallax .wrap{position:relative;z-index:2}
 .parallax .big{font-family:var(--display);font-weight:300;font-size:clamp(1.7rem,4vw,3.1rem);line-height:1.28;max-width:24ch;margin:0 auto;color:var(--paper)}
 .parallax .big b{color:var(--pewter-light);font-weight:500}
@@ -252,16 +260,16 @@ nav.scrolled .nav-brand img{height:46px}
 /* ---------- SERVICES ---------- */
 .services{background:var(--char)}
 .services .eyebrow{color:var(--pewter-light)}
-.services .eyebrow .num{color:var(--paper)}
+.services .eyebrow .num{color:var(--green-paper)}
 .services .sec-title{color:var(--paper)}
-.services .sec-title em{color:var(--pewter-light)}
+.services .sec-title em{color:var(--green-paper)}
 .svc-list{margin-top:3.4rem;border-top:1px solid var(--line-light)}
 .svc{border-bottom:1px solid var(--line-light);cursor:pointer;transition:background .4s var(--ease)}
 .svc:hover{background:rgba(246,245,242,.04)}
 .svc-head{display:grid;grid-template-columns:auto 1fr auto;gap:1.6rem;align-items:center;padding:2rem 0}
 .svc-num{font-family:var(--display);font-weight:300;font-size:1.2rem;color:var(--pewter-light)}
-.svc-name{font-family:var(--display);font-weight:300;font-size:clamp(1.35rem,2.6vw,2.1rem);color:var(--paper);transition:color .4s var(--ease)}
-.svc:hover .svc-name{color:var(--pewter-light)}
+.svc-name{font-family:var(--display);font-weight:300;font-size:clamp(1.35rem,2.6vw,2.1rem);color:var(--green-paper);transition:color .4s var(--ease)}
+.svc:hover .svc-name{color:var(--paper)}
 .svc-toggle{width:36px;height:36px;border:1px solid var(--line-light);border-radius:50%;position:relative;flex-shrink:0;transition:.4s var(--ease)}
 .svc-toggle::before,.svc-toggle::after{content:"";position:absolute;background:var(--paper);left:50%;top:50%;transition:.4s var(--ease)}
 .svc-toggle::before{width:13px;height:1.5px;transform:translate(-50%,-50%)}
@@ -277,16 +285,17 @@ nav.scrolled .nav-brand img{height:46px}
 /* ---------- PROCESS ---------- */
 .process{background:var(--bg-warm)}
 .process .eyebrow{color:var(--char-2)}
-.process .eyebrow .num{color:var(--char-2)}
-.process .sec-title{color:var(--char-2)}
-.process .sec-title em{color:var(--paper)}
+.process .eyebrow .num{color:var(--green)}
+.process .sec-title{color:var(--green)}
+.process .sec-title em{color:var(--blue)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3.6rem;counter-reset:step}
 .step{padding:2.3rem 1.6rem 2.3rem 0;border-top:2px solid var(--char-2);position:relative}
 .step:not(:last-child){border-right:1px solid rgba(70,67,63,.2);padding-right:1.6rem}
 .step:not(:first-child){padding-left:1.6rem}
-.step-n{font-family:var(--display);font-weight:400;font-size:1.5rem;color:var(--char-2);margin-bottom:1.1rem}
-.step h3{font-family:var(--display);font-weight:500;font-size:1.35rem;margin-bottom:.7rem;color:var(--char-2)}
+.step-n{font-family:var(--display);font-weight:400;font-size:1.5rem;color:var(--green);margin-bottom:1.1rem}
+.step h3{font-family:var(--display);font-weight:500;font-size:1.35rem;margin-top:.4rem;margin-bottom:.7rem;color:var(--green)}
 .step p{font-size:.95rem;color:var(--char);font-weight:300}
+.process-quote{font-family:var(--display);font-weight:300;font-size:clamp(1.3rem,2.6vw,2rem);line-height:1.3;color:var(--green);border-left:2px solid var(--blue);padding-left:1.6rem;margin-top:3.4rem;max-width:34ch}
 
 /* ---------- PHILOSOPHY ---------- */
 .philosophy{background:var(--bg)}
@@ -295,21 +304,22 @@ nav.scrolled .nav-brand img{height:46px}
   border:1px solid var(--line);padding:2.6rem 2.1rem;position:relative;overflow:hidden;background:var(--paper);
   transition:.5s var(--ease);
 }
-.phil-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:var(--char);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.phil-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
 .phil-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -28px rgba(70,67,63,.4)}
 .phil-card:hover::before{transform:scaleX(1)}
 .phil-icon{width:44px;height:44px;margin-bottom:1.6rem}
-.phil-icon svg{width:100%;height:100%;stroke:var(--char);fill:none;stroke-width:1.3}
-.phil-card h3{font-family:var(--display);font-weight:400;font-size:1.55rem;margin-bottom:.8rem;color:var(--ink)}
+.phil-icon svg{width:100%;height:100%;stroke:var(--green);fill:none;stroke-width:1.3}
+.phil-card h3{font-family:var(--display);font-weight:400;font-size:1.55rem;margin-bottom:.8rem;color:var(--green)}
 .phil-card p{color:var(--muted);font-size:.97rem;font-weight:300}
 
 /* ---------- TESTIMONIALS ---------- */
 .reviews{background:var(--char-2);overflow:hidden}
 .reviews .eyebrow{color:var(--pewter-light)}
-.reviews .eyebrow .num{color:var(--paper)}
+.reviews .eyebrow .num{color:var(--green-paper)}
 .reviews .sec-title{color:var(--paper)}
-.reviews .sec-title em{color:var(--pewter-light)}
+.reviews .sec-title em{color:var(--green-paper)}
 .rev-viewport{overflow:hidden;margin-top:3.4rem}
+.rev-intro{margin-top:1.2rem;font-family:var(--display);font-weight:300;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--green-paper);max-width:46ch}
 .rev-track{display:flex;gap:1.6rem;transition:transform .7s var(--ease)}
 .rev-card{
   flex:0 0 clamp(280px,42vw,440px);background:var(--char);border:1px solid var(--line-light);
@@ -329,7 +339,7 @@ nav.scrolled .nav-brand img{height:46px}
 .faq-list{margin-top:3rem;max-width:900px}
 .faq-item{border-bottom:1px solid var(--line)}
 .faq-q{display:flex;justify-content:space-between;align-items:center;gap:1.4rem;padding:1.8rem 0;cursor:pointer}
-.faq-q h3{font-family:var(--display);font-weight:400;font-size:clamp(1.15rem,2vw,1.5rem);color:var(--ink)}
+.faq-q h3{font-family:var(--display);font-weight:400;font-size:clamp(1.15rem,2vw,1.5rem);color:var(--green)}
 .faq-icon{width:24px;height:24px;flex-shrink:0;position:relative}
 .faq-icon::before,.faq-icon::after{content:"";position:absolute;background:var(--char);left:50%;top:50%;transition:.4s var(--ease)}
 .faq-icon::before{width:16px;height:1.5px;transform:translate(-50%,-50%)}
@@ -340,25 +350,25 @@ nav.scrolled .nav-brand img{height:46px}
 
 /* ---------- CONTACT ---------- */
 .contact{position:relative;overflow:hidden;background:var(--char)}
-.contact-bg{position:absolute;inset:0;z-index:0;opacity:.16;background-size:cover;background-position:center;filter:grayscale(.5);will-change:transform}
+.contact-bg{position:absolute;inset:0;z-index:0;opacity:.22;background-size:cover;background-position:center;will-change:transform}
 .contact .wrap{position:relative;z-index:1}
 .contact .eyebrow{color:var(--pewter-light)}
-.contact .eyebrow .num{color:var(--paper)}
+.contact .eyebrow .num{color:var(--green-paper)}
 .contact .sec-title{color:var(--paper)}
-.contact .sec-title em{color:var(--pewter-light)}
+.contact .sec-title em{color:var(--green-paper)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,5rem);margin-top:3rem}
 .ci{margin-bottom:2rem}
 .ci .lbl{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.26em;font-size:.7rem;color:var(--pewter-light);margin-bottom:.55rem}
 .ci a,.ci p{font-family:var(--display);font-weight:300;font-size:clamp(1.2rem,2.2vw,1.6rem);color:var(--paper);transition:color .3s var(--ease)}
 .ci a:hover{color:var(--pewter-light)}
 .contact-map{border:1px solid var(--line-light);overflow:hidden;min-height:360px}
-.contact-map iframe{width:100%;height:100%;min-height:360px;border:0;filter:grayscale(1) contrast(.9)}
+.contact-map iframe{width:100%;height:100%;min-height:360px;border:0}
 
 /* ---------- FOOTER ---------- */
 footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid var(--line-light)}
 .foot-in{max-width:1340px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
 .foot-brand{display:flex;align-items:center;gap:.85rem}
-.foot-brand img{height:48px}
+.foot-brand img{height:52px;border-radius:8px}
 .foot-brand b{font-family:var(--display);font-weight:400;letter-spacing:.06em;color:var(--paper)}
 .foot-copy{font-family:var(--narrow);text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;color:var(--muted)}
 .foot-copy a{color:var(--pewter-light)}
@@ -443,9 +453,9 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
   <div class="hero-panel">
     <div class="hero-bg" id="heroBg"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow h-anim d1"><span class="ln"></span>Μιχαήλ Θ. Φινφίνης</div>
-      <h1 class="h-anim d2">Λογιστικό γραφείο για επιχειρήσεις που θέλουν σιγουριά.</h1>
-      <p class="lede h-anim d3">Λογιστικές και φοροτεχνικές υπηρεσίες, προσαρμοσμένες στις ανάγκες της επιχείρησής σας. Επικοινωνήστε μαζί μας και δίνουμε άμεσα λύση στο ζήτημα που σας απασχολεί.</p>
+      <div class="hero-eyebrow h-anim d1"><span class="ln"></span>Μιχάλης Φινφίνης & Συνεργάτες</div>
+      <h1 class="h-anim d2">Τριάντα χρόνια δίπλα στο επιχειρείν και τον επαγγελματία.</h1>
+      <p class="lede h-anim d3">Ο Μιχάλης Φινφίνης και οι συνεργάτες του υποστηρίζουν επιχειρήσεις και επαγγελματίες εδώ και τρεις δεκαετίες, προσφέροντας εξειδικευμένες λογιστικές, φοροτεχνικές και συμβουλευτικές υπηρεσίες. Σε ένα διαρκώς μεταβαλλόμενο φορολογικό περιβάλλον, λειτουργούμε ως σταθερός συνεργάτης — με υπεύθυνη ενημέρωση, άμεση εξυπηρέτηση και απόλυτη εχεμύθεια.</p>
       <div class="hero-actions h-anim d4">
         <a href="#contact" class="btn btn-solid">Επικοινωνία</a>
         <a href="#services" class="btn btn-ghost">Οι υπηρεσίες μας</a>
@@ -455,8 +465,9 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
   <div class="hero-aside">
     <span class="floatmark" aria-hidden="true">30</span>
     <div class="hero-aside-inner">
-      <h2 class="h-anim d3">Τριάντα χρόνια δίπλα στην ελληνική επιχείρηση.</h2>
-      <p class="h-anim d4">Με συνεχή παρουσία στον χώρο της λογιστικής και φοροτεχνικής υποστήριξης, μετατρέπουμε την πολυπλοκότητα σε καθαρές, υπεύθυνες αποφάσεις.</p>
+      <span class="aside-years h-anim d2">30 <em>χρόνια εμπειρίας</em></span>
+      <h2 class="h-anim d3">Ένα γραφείο με παρουσία τριών δεκαετιών.</h2>
+      <blockquote class="aside-quote h-anim d4">Τα οικονομικά δεδομένα αποτελούν τη βάση κάθε επιχειρηματικής απόφασης. Εμείς φροντίζουμε να έχετε πάντα καθαρή εικόνα και αξιόπιστη καθοδήγηση.</blockquote>
       <div class="hero-pills h-anim d5">
         <span class="pill">Εμπειρία</span>
         <span class="pill">Επαγγελματισμός</span>
@@ -477,19 +488,19 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
 <section class="about sec-pad" id="about">
   <div class="wrap">
     <div class="eyebrow reveal"><span class="num">01</span>Το γραφείο μας</div>
-    <h2 class="sec-title reveal d1" style="max-width:18ch">Ένα γραφείο με <em>συνέπεια</em> τριών δεκαετιών.</h2>
+    <h2 class="sec-title reveal d1" style="max-width:18ch">Ένα γραφείο με παρουσία τριών δεκαετιών.</h2>
     <div class="about-grid">
       <div>
         <div class="reveal d1">
           <div class="about-name">Μιχαήλ Θ. Φινφίνης</div>
           <div class="about-role">Λογιστής — Φοροτεχνικός</div>
         </div>
-        <p class="reveal d2">ο Μιχάλης Φινφίνης και οι συνεργάτες του έχουν συνεχή παρουσία στον χώρο της λογιστικής και φοροτεχνικής υποστήριξης των επιχειρήσεων εδώ και 30 χρόνια. Στοχεύουμε στην πληρέστερη δυνατή παροχή υπηρεσιών, με βαθιά γνώση του ελληνικού επιχειρηματικού περιβάλλοντος.</p>
-        <p class="reveal d2">Σε ένα φορολογικό τοπίο που αλλάζει διαρκώς, ρόλος μας είναι να στεκόμαστε δίπλα στην επιχείρησή σας με σταθερότητα, διαθεσιμότητα και απόλυτη εχεμύθεια — ώστε κάθε απόφαση να στηρίζεται σε καθαρά δεδομένα.</p>
-        <blockquote class="pullquote reveal d3">«Η σωστή λογιστική δεν είναι μια υποχρέωση που κλείνεις — είναι μια σχέση εμπιστοσύνης που χτίζεις.»</blockquote>
+        <p class="reveal d2">Ο Μιχάλης Φινφίνης και οι συνεργάτες του υποστηρίζουν επιχειρήσεις και επαγγελματίες εδώ και τρεις δεκαετίες, προσφέροντας εξειδικευμένες λογιστικές, φοροτεχνικές και συμβουλευτικές υπηρεσίες. Η εμπειρία μας, σε συνδυασμό με τη διαρκή παρακολούθηση των εξελίξεων, διασφαλίζει έγκυρη καθοδήγηση και ουσιαστική υποστήριξη σε κάθε στάδιο της επιχειρηματικής δραστηριότητας.</p>
+        <p class="reveal d2">Σε ένα διαρκώς μεταβαλλόμενο φορολογικό περιβάλλον, λειτουργούμε ως σταθερός συνεργάτης, παρέχοντας υπεύθυνη ενημέρωση, άμεση εξυπηρέτηση και απόλυτη εχεμύθεια, ώστε να λαμβάνετε αποφάσεις με σιγουριά και προοπτική.</p>
+        <blockquote class="pullquote reveal d3">Τα οικονομικά δεδομένα / στοιχεία αποτελούν τη βάση κάθε επιχειρηματικής απόφασης.<br>Εμείς φροντίζουμε να έχετε πάντα καθαρή εικόνα και αξιόπιστη καθοδήγηση.</blockquote>
         <div class="about-stats reveal d3">
           <div class="stat"><div class="n">30+</div><div class="l">Χρόνια Εμπειρίας</div></div>
-          <div class="stat"><div class="n">100%</div><div class="l">Εχεμύθεια</div></div>
+          <div class="stat"><div class="n">100%</div><div class="l">Αξιοπιστία</div></div>
           <div class="stat"><div class="n">1:1</div><div class="l">Προσωπική Επαφή</div></div>
         </div>
       </div>
@@ -512,7 +523,7 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
 <section class="services sec-pad" id="services">
   <div class="wrap">
     <div class="eyebrow reveal"><span class="num">02</span>Οι υπηρεσίες μας</div>
-    <h2 class="sec-title reveal d1">Όσα χρειάζεται η επιχείρησή σας, <em>κάτω από μία στέγη.</em></h2>
+    <h2 class="sec-title reveal d1">Όσα χρειάζεται η επιχείρησήexport σας, <em>κάτω από μία στέγη.</em></h2>
     <div class="svc-list">
       <article class="svc">
         <div class="svc-head">
@@ -520,7 +531,7 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
           <h3 class="svc-name">Λογιστική</h3>
           <span class="svc-toggle" aria-hidden="true"></span>
         </div>
-        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Τηρούμε και παρακολουθούμε τα βιβλία της επιχείρησής σας με τάξη και συνέπεια, ώστε η εικόνα των οικονομικών σας να είναι πάντα ξεκάθαρη. Κάθε κίνηση καταγράφεται σωστά και κάθε υποχρέωση εκπληρώνεται στην ώρα της — και πάνω από όλα, σας δίνουμε τα στοιχεία που χρειάζεστε για να παίρνετε αποφάσεις με σιγουριά, όχι με υποθέσεις.</p></div></div>
+        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Η σωστή λογιστική παρακολούθηση αποτελεί τη βάση της υγιούς επιχειρηματικής λειτουργίας. Με υπευθυνότητα και συνέπεια, διαχειριζόμαστε τα λογιστικά δεδομένα της επιχείρησής σας, εξασφαλίζοντας ακρίβεια, συμμόρφωση και αξιόπιστη πληροφόρηση. Έτσι, αποκτάτε καθαρή οικονομική εικόνα και τη βεβαιότητα που απαιτείται για τη λήψη στρατηγικών αποφάσεων.</p></div></div>
       </article>
       <article class="svc">
         <div class="svc-head">
@@ -528,7 +539,7 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
           <h3 class="svc-name">Συμβουλευτική Φοροτεχνικών Θεμάτων</h3>
           <span class="svc-toggle" aria-hidden="true"></span>
         </div>
-        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Το φορολογικό και ασφαλιστικό πλαίσιο αλλάζει συνεχώς, και μαζί του οι κίνδυνοι και οι ευκαιρίες για κάθε επιχείρηση. Παρακολουθούμε τις εξελίξεις πριν σας αφορούν και σας ενημερώνουμε έγκαιρα, μεταφράζοντας τη νομοθεσία σε πρακτικές, υπεύθυνες κινήσεις που προστατεύουν την επιχείρησή σας και βελτιστοποιούν τη φορολογική της θέση.</p></div></div>
+        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Σε ένα διαρκώς μεταβαλλόμενο φορολογικό και ασφαλιστικό πλαίσιο, η έγκαιρη ενημέρωση και η σωστή καθοδήγηση αποτελούν κρίσιμους παράγοντες για την ομαλή λειτουργία κάθε επιχείρησης. Παρακολουθούμε στενά τις εξελίξεις και σας παρέχουμε τεκμηριωμένες συμβουλές και πρακτικές λύσεις, διασφαλίζοντας συμμόρφωση, περιορισμό των κινδύνων και αξιοποίηση κάθε διαθέσιμης δυνατότητας προς όφελος της επιχείρησής σας.</p></div></div>
       </article>
       <article class="svc">
         <div class="svc-head">
@@ -536,15 +547,15 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
           <h3 class="svc-name">Έναρξη Επιχείρησης - Μετατροπές</h3>
           <span class="svc-toggle" aria-hidden="true"></span>
         </div>
-        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Από την ατομική επιχείρηση μέχρι κάθε μορφή προσωπικής ή κεφαλαιουχικής εταιρίας — Ο.Ε., Ε.Ε., Ε.Π.Ε. και Α.Ε. — αναλαμβάνουμε ολόκληρη τη διαδικασία σύστασης ή μετατροπής. Σας βοηθάμε να επιλέξετε τη νομική μορφή που ταιριάζει πραγματικά στους στόχους σας και χειριζόμαστε όλα τα νομικά και φορολογικά βήματα, ώστε να ξεκινήσετε χωρίς εμπόδια.</p></div></div>
+        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Από την ίδρυση μιας ατομικής επιχείρησης έως τη σύσταση ή μετατροπή προσωπικών και κεφαλαιουχικών εταιρειών, παρέχουμε ολοκληρωμένη υποστήριξη σε κάθε στάδιο της διαδικασίας. Σας καθοδηγούμε στην επιλογή της κατάλληλης εταιρικής μορφής and αναλαμβάνουμε όλες τις απαραίτητες ενέργειες, ώστε η επιχειρηματική σας δραστηριότητα να ξεκινήσει ή να εξελιχθεί με ασφάλεια, ταχύτητα και πλήρη συμμόρφωση με το ισχύον θεσμικό πλαίσιο.</p></div></div>
       </article>
       <article class="svc">
         <div class="svc-head">
           <span class="svc-num">IV</span>
-          <h3 class="svc-name">Υποστήριξη Μισθοδοσίας & Ανθρωπίνου Δυναμικού</h3>
+          <h3 class="svc-name">Υποστήριξη Μισθοδοσίας & Ανθρώπινου Δυναμικού</h3>
           <span class="svc-toggle" aria-hidden="true"></span>
         </div>
-        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Το ανθρώπινο δυναμικό είναι ο πιο πολύτιμος πόρος της επιχείρησης, αλλά και ένα από τα μεγαλύτερα κόστη της. Αναλαμβάνουμε τη μισθοδοσία, τις ασφαλιστικές υποχρεώσεις και την εργατική παρακολούθηση με ακρίβεια, και σας στηρίζουμε στη στρατηγική διαχείριση του προσωπικού — ώστε να κρατάτε ισορροπία ανάμεσα στην απόδοση των ανθρώπων σας και τη σταθερότητα των οικονομικών σας.</p></div></div>
+        <div class="svc-body"><div class="svc-body-inner"><span class="sp"></span><p>Το ανθρώπινο δυναμικό αποτελεί έναν από τους σημαντικότερους παράγοντες επιτυχίας κάθε επιχείρησης, αλλά και ένα από τα μεγαλύτερα κόστη της. Παρέχουμε ολοκληρωμένες υπηρεσίες μισθοδοσίας, ασφαλιστικής και εργατικής υποστήριξης, εξασφαλίζοντας την ορθή τήρηση των υποχρεώσεών σας και την απρόσκοπτη λειτουργία της επιχείρησης. Με έγκυρη ενημέρωση και συνεχή υποστήριξη, σας βοηθάμε να διαχειρίζεστε το προσωπικό σας με ασφάλεια, αποτελεσματικότητα και στρατηγική προοπτική, κρατώντας τις σωστές ισορροπίες.</p></div></div>
       </article>
     </div>
   </div>
@@ -556,24 +567,20 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
     <h2 class="sec-title reveal d1">Πώς <em>δουλεύουμε</em> μαζί.</h2>
     <div class="steps">
       <div class="step reveal d1">
-        <div class="step-n">α′</div>
         <h3>Γνωριμία</h3>
-        <p>Ακούμε την περίπτωση της επιχείρησής σας και χαρτογραφούμε τις πραγματικές σας ανάγκες χωρίς βιασύνη.</p>
+        <p>Η συνεργασία μας ξεκινά με την κατανόηση της επιχειρηματικής σας πραγματικότητας. Ακούμε, αναλύουμε και χαρτογραφούμε τις ανάγκες σας, θέτοντας τις βάσεις για μια αποτελεσματική και μακροχρόνια συνεργασία.</p>
       </div>
       <div class="step reveal d2">
-        <div class="step-n">β′</div>
         <h3>Οργάνωση</h3>
-        <p>Βάζουμε σε τάξη τα οικονομικά σας δεδομένα και ορίζουμε μια ξεκάθαρη ροή συνεργασίας.</p>
+        <p>Οργανώνουμε τα οικονομικά σας δεδομένα και θέτουμε τις βάσεις για μια σαφή, αποτελεσματική και αποδοτική συνεργασία.</p>
       </div>
       <div class="step reveal d3">
-        <div class="step-n">γ′</div>
         <h3>Παρακολούθηση</h3>
-        <p>Αναλαμβάνουμε τη συνεχή λογιστική και φορολογική παρακολούθηση, με προληπτική ενημέρωση.</p>
+        <p>Παρέχουμε συνεχή λογιστική και φορολογική υποστήριξη, διασφαλίζοντας την ορθή παρακολούθηση των οικονομικών σας δεδομένων και την έγκαιρη προληπτική ενημέρωση για κάθε φορολογική εξέλιξη που σας αφορά.</p>
       </div>
       <div class="step reveal d4">
-        <div class="step-n">δ′</div>
         <h3>Καθοδήγηση</h3>
-        <p>Σας στηρίζουμε στις αποφάσεις σας με συμβουλές που μεταφράζουν τους αριθμούς σε στρατηγική.</p>
+        <p>Μετατρέπουμε τα οικονομικά σας δεδομένα σε στρατηγική πληροφόρηση που ενισχύει τη λήψη σωστών επιχειρηματικών αποφάσεων.</p>
       </div>
     </div>
   </div>
@@ -582,29 +589,29 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
 <section class="parallax">
   <div class="parallax-bg" id="px2" style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80')"></div>
   <div class="wrap">
-    <p class="big reveal">Το φορολογικό τοπίο αλλάζει.<br><b>Η σχέση σας με τον λογιστή σας δεν πρέπει.</b></p>
+    <p class="big reveal">Το φορολογικό περιβάλλον αλλάζει.<br><b>Η εμπιστοσύνη στη συνεργασία σας με τον λογιστή παραμένει σταθερή.</b></p>
   </div>
 </section>
 
 <section class="philosophy sec-pad">
   <div class="wrap">
     <div class="eyebrow reveal"><span class="num">04</span>Η Φιλοσοφία μας</div>
-    <h2 class="sec-title reveal d1">Τρεις αρχές που <em>δεν διαπραγματευόμαστε.</em></h2>
+    <h2 class="sec-title reveal d1">Τρεις αξίες <em>αδιαπραγμάτευτης δέσμευσης.</em></h2>
     <div class="phil-grid">
       <div class="phil-card reveal d1">
         <div class="phil-icon"><svg viewBox="0 0 48 48"><path d="M24 4v40M8 14l16-8 16 8M8 14v8M40 14v8M6 22h12l-6 12-6-12zM30 22h12l-6 12-6-12z"/></svg></div>
         <h3>Εμπειρία</h3>
-        <p>Τριάντα χρόνια δίπλα σε επιχειρήσεις μάς έμαθαν να αναγνωρίζουμε το ουσιώδες και να προλαμβάνουμε τα προβλήματα πριν εμφανιστούν.</p>
+        <p>Η πολυετής παρουσία στον χώρο των επιχειρήσεων μάς επιτρέπει να αναγνωρίζουμε εγκαίρως κρίσιμες παραμέτρους, να εστιάζουμε στο ουσιώδες και να προλαμβάνουμε ζητήματα πριν εξελιχθούν σε προβλήματα.</p>
       </div>
       <div class="phil-card reveal d2">
         <div class="phil-icon"><svg viewBox="0 0 48 48"><path d="M24 6l16 6v10c0 10-7 16-16 20-9-4-16-10-16-20V12l16-6z"/><path d="M17 24l5 5 9-10"/></svg></div>
         <h3>Επαγγελματισμός</h3>
-        <p>Κάθε εγγραφή, κάθε δήλωση, κάθε προθεσμία αντιμετωπίζεται με σχολαστικότητα. Στους αριθμούς δεν χωρούν προχειρότητες.</p>
+        <p>Κάθε εγγραφή, δήλωση και υποχρέωση αντιμετωπίζεται με ακρίβεια, συνέπεια και απόλυτο επαγγελματισμό. Στους αριθμούς δεν υπάρχει χώρος για αστοχίες. Στη δουλειά μας, η προχειρότητα δεν έχει θέση.</p>
       </div>
       <div class="phil-card reveal d3">
         <div class="phil-icon"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 14v10l7 5"/></svg></div>
         <h3>Υπευθυνότητα</h3>
-        <p>Διαχειριζόμαστε ευαίσθητα οικονομικά δεδομένα με απόλυτη εχεμύθεια και είμαστε εκεί όταν μας χρειάζεστε, με σταθερή επικοινωνία.</p>
+        <p>Διαχειριζόμαστε τα ευαίσθητα οικονομικά σας δεδομένα με απόλυτη εχεμύθεια, επαγγελματισμό και συνέπεια. Παραμένουμε σταθερά διαθέσιμοι, με άμεση και αξιόπιστη επικοινωνία κάθε φορά που μας χρειάζεστε.</p>
       </div>
     </div>
   </div>
@@ -614,6 +621,7 @@ footer{background:var(--char-2);padding:3.4rem var(--pad);border-top:1px solid v
   <div class="wrap">
     <div class="eyebrow reveal"><span class="num">05</span>Λόγια Πελατών</div>
     <h2 class="sec-title reveal d1">Η εμπιστοσύνη <em>μετριέται σε χρόνια.</em></h2>
+    <p class="rev-intro reveal d1">Η εμπιστοσύνη καλλιεργείται και αποδεικνύεται μέσα στον χρόνο.</p>
     <div class="rev-viewport reveal d1">
       <div class="rev-track" id="revTrack">
         <article class="rev-card">
